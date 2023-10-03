@@ -1,10 +1,9 @@
 # NuPPN
 
-These are the NuGrid Post-Processing Network (PPN) codes. 
-
-_See the [wiki](https://github.com/NuGrid/NuPPN/wiki) for more details_
-
-This repo starts with the svn rev:6626. svn repo will remain available for archival purpose, no new commits to svn.
+Changes compared to NuGrid/nuppn-modular2_ininet3 branch:
+- edit parameter_physics for new REACLIB size
+- reaclib.F90 edited name for new REACLIB files
+- NPDATA/REACLIB now contains both REACLIB files
 
 ## TODO:
 
