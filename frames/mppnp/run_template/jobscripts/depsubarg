@@ -1,0 +1,5 @@
+# submit dependent job
+name=$1
+
+qsub -W depend=afterany:${name:0:7}  jobscript.saguaro
+

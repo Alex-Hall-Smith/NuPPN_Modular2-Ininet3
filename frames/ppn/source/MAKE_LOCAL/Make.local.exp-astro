@@ -1,0 +1,30 @@
+# Copy this file to Make.local and edit to suit your local
+# configuration
+
+ARCH = INTEL
+
+# make sure PHYSICS and SOLVER are absolute path names, like this:
+
+PPN = /home/kgoebel/ppnSim/ppn_package_2016_01_20/
+
+PHYSICS = $(PPN)/physics/phys08
+SOLVER = $(PPN)/solver/NFR
+#We are testing the MKL solver, uncomment the next line
+#SOLVER = $(PPN)/solver/NFR_branch_SMS
+
+# the MKL libraries should be selected via the environment setting
+#  scripts that are loaded from the .bashrc (see the latex
+#  documentation for the solver)
+
+# mkl_solver_lp64 is needed for the sparse solver
+# mkl_lapack is needed for the general lapack solver (mat_solv_option)
+
+#LAPACK_LIBS = -lmkl_lapack -lmkl_solver_lp64 -lmkl_intel_lp64 -lmkl_intel_thread -lmkl_core -liomp5
+
+#intel 12 64 bit:
+LAPACK_LIBS =-lmkl_intel_lp64 -lmkl_intel_thread -lmkl_lapack95_lp64 -lmkl_core -liomp5 -lpthread
+
+# do you want to use superLU (open source sparse matrix library)?
+# BLASLIB should be the path to the openblas libraries (usually /usr/lib/libblas)
+USE_SUPERLU = YES
+BLASLIB = -L/usr/lib/libblas -lblas

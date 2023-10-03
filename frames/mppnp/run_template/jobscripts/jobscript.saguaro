@@ -1,0 +1,13 @@
+#!/bin/bash
+# submit with "qsub jobscript"
+#PBS -N mpp_2MS1.2
+#PBS -l nodes=64:harpertown
+#PBS -j oe
+#PBS -o out
+#PBS -l walltime=24:00:00
+
+export OMP_NUM_THREADS=1
+export MKL_NUM_THREADS=1
+
+cd $PBS_O_WORKDIR
+mpiexec -bynode /home/fherwig/PPN_Set1/mppnp/CODE/mppnp.exe

@@ -1,0 +1,22 @@
+# Copy this file (or any of the machine specific Make.local.machines
+# files) to Make.local and edit to suit your local configuration
+
+# identifier for this local
+LOCAL = vortex_gfort
+
+#Architecture 
+ARCH =  pick_one_from_the_ARCH_directory
+
+# make sure PHYSICS and SOLVER are absolute path names, for example
+# specify the location of a full svn tree if you have one, like this:
+PPN = /Users/fherwig/PPN/forum.astro.keele.ac.uk
+
+# you don't need to change the following two but you can
+PHYSICS = $(PPN)/physics/phys08
+SOLVER = $(PPN)/solver/NFR
+
+# where is the se library?
+SEHOME = /opt/se-1.2_gfortran
+
+# where is mpi?
+MPIHOME =  /opt/OpenMPI/openmpi-1.2.8_gfortran

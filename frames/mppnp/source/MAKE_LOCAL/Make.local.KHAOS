@@ -1,0 +1,35 @@
+# Copy this file to Make.local and edit to suit your local
+# configuration
+
+# identifier for this local
+LOCAL = KHAOS
+
+#Architecture 
+ARCH = Linux_x86_64_ifort
+
+# make sure PHYSICS and SOLVER are absolute path names, for example
+# specify the location of a full svn tree if you have one, like this:
+PPN = /data/meb/postprocess
+
+# you don't need to change the following two but you can
+PHYSICS = $(PPN)/physics/phys08
+SOLVER = $(PPN)/solver/NFR
+#SOLVER = $(PPN)/solver/NFR_branch_SMS
+
+# where is the se library?
+SEHOME = /home/meb/opt/se-intel
+
+# where is mpi?
+MPIHOME = /home/fherwig/openmpi
+
+# the MKL libraries should be selected via the environment setting
+#  scripts that are loaded from the .bashrc (see the latex
+#  documentation for the solver)
+
+# mkl_solver_lp64 is needed for the sparse solver
+# mkl_lapack is needed for the general lapack solver (mat_solv_option)
+#LAPACK_LIBS = -lmkl_lapack -lmkl_solver_lp64 -lmkl_intel_lp64 -lmkl_intel_thread -lmkl_core -liomp5
+
+LD_PATH_LAPACK=/home/meb/opt/acml4.4.0/ifort64/lib
+LAPACK_LIBS = -lacml -lacml_mv
+

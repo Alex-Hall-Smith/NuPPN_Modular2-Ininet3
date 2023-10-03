@@ -1,0 +1,22 @@
+This example is a simple H-burn for constant T and rho starting with
+solar composition.
+
+# compile
+$ make distclean
+$ make
+
+# run
+$ ./ppn.exe
+
+# make plots
+$ ./plot.sh
+
+If you have moved this example dir out of the svn tree you may
+have to edit the PCD variable in the Makefile.
+
+Last update:
+
+# fh 151205
+     > adapting this example to build update performed by Sam in Dec
+       2015
+     > updating plotting scripts.

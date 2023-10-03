@@ -1,0 +1,26 @@
+Version history
+===============
+
+(Previous versions can be found in the subdirectories of
+	http://download.nucastro.org/astro/reaclib/old )
+
+Current:
+   Inclusion of KADoNiS v0.2 values for (n,g) and (g,n) reactions.
+   For details, see readme_update.txt .
+   No change to winvn.
+   (April 10, 2007: removed beta decay of 96Zr! (TR))
+   
+2000:
+   This is a limited update of a previous version. The previous version
+   was the 1991 version of reaclib, updated to z=46 in 1995 by
+   Ch. Freiburghaus and T. Rauscher. It can be found online at
+   http://ie.lbl.gov/astro/friedel.html . In this update, the
+   theoretical NON-SMOKER rates were inserted and replaced previous
+   theoretical values. The NON-SMOKER rates include targets up to z=83.
+   As mass formula, the FRDM was chosen.
+   For the partition functions, the partition functions published in
+   ADNDT 75 (2000) 1 were included in winvn. For partition functions not
+   included in that paper, the values from the previous version were kept.
+
+
+Thomas Rauscher

@@ -1,0 +1,14 @@
+graph.gnu
+isotopedatabase_all.txt
+isotopedatabase.txt
+lc0gh_selpath_02_demo		hydro trajectory He-shell flash convection
+makemovie.prl
+ppn_frame.input
+ppn_physics.input
+ppn_solver.input
+printlist.input
+README				this file 
+run
+selem.EVOLz2m2m3.finalIS	
+trajectory_1.input
+trajectory.input

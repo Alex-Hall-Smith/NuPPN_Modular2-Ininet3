@@ -1,0 +1,28 @@
+# Copy this file to Make.local and edit to suit your local
+# configuration
+
+# identifier for this local
+LOCAL = maia.cluster
+
+#Architecture 
+ARCH =  Linux_x86_64_ifort_defaultMPI
+
+# make sure PHYSICS and SOLVER are absolute path names, for example
+# specify the location of a full svn tree if you have one, like this:
+PPN = /home/physik/pignatav/mppnp_package_1mar_11/
+
+# you don't need to change the following two but you can
+PHYSICS = $(PPN)/physics/phys08
+SOLVER = $(PPN)/solver/NFR
+
+# where is the se library?
+SEHOME = /home/physik/pignatav/opt/se-intel
+
+# the MKL libraries should be selected via the environment setting
+#  scripts that are loaded from the .bashrc (see the latex
+#  documentation for the solver)
+
+# mkl_solver_lp64 is needed for the sparse solver
+# mkl_lapack is needed for the general lapack solver (mat_solv_option)
+LD_PATH_LAPACK=/opt/intel/mkl/10.2.4.032/lib/em64t
+LAPACK_LIBS = -lmkl_lapack -lmkl_solver_lp64 -lmkl_intel_lp64 -lmkl_intel_thread -lmkl_core -liomp5

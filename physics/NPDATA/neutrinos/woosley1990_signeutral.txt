@@ -1,0 +1,28 @@
+# Table 1 of Woosley et al 1990 ApJ 356 272
+# Neutral current cross sections
+#
+# Target, average neutrino temperature (averaged over type [neutrino and
+# antineutrino] and over a normalized Fermi-Dirac distribution for the given
+# temperature)
+#
+#Z   A   el  T_nu (MeV)
+18
+                4        6        8        10       12
+2   4   HE  4   1.35e-3  3.87e-2  2.14e-1  6.78e-1  1.63e+0
+6   12  C  12   2.10e-2  1.51e-1  4.64e-1  1.02e+0  1.88e+0
+7   14  N  14   8.28e-2  3.79e-1  9.20e-1  1.73e+0  2.81e+0
+8   16  0  16   3.76e-3  5.77e-2  2.42e-1  6.45e-1  1.36e+0
+10  20  NE 20   1.09e-2  1.38e-1  4.61e-1  1.03e+0  1.86e+0
+12  24  MG 24   6.49e-2  4.41e-1  1.15e+0  2.19e+0  3.55e+0
+14  28  SI 28   8.75e-2  5.01e-1  1.23e+0  2.26e+0  3.59e+0
+16  32  S  32   9.11e-2  4.85e-1  1.16e+0  2.10e+0  3.29e+0
+18  36  AR 36   2.39e-2  1.76e-1  4.81e-1  9.44e-1  1.57e+0
+20  40  CA 40   2.45e-3  7.36e-2  2.52e-1  5.52e-1  9.48e-1
+22  44  TI 44   6.61e-2  2.86e-1  6.58e-1  1.18e+0  1.85e+0
+24  48  CR 48   9.85e-2  4.17e-1  9.02e-1  1.53e+0  2.29e+0
+26  52  FE 52   9.70e-2  4.80e-1  1.07e+0  1.83e+0  2.75e+0
+26  56  FE 56   1.62e-1  6.46e-1  1.33e+0  2.18e+0  3.17e+0
+28  56  NI 56   1.51e-1  6.08e-1  1.25e+0  2.05e+0  2.98e+0
+30  60  ZN 60   1.54e-1  7.43e-1  1.57e+0  2.58e+0  3.75e+0
+32  64  GE 64   1.62e-1  6.81e-1  1.39e+0  2.26e+0  3.25e+0
+34  68  SE 68   1.18e-1  5.73e-1  1.22e+0  2.01e+0  2.92e+0

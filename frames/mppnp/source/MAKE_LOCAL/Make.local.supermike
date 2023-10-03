@@ -1,0 +1,23 @@
+# Copy this file (or any of the machine specific Make.local.machines
+# files) to Make.local and edit to suit your local configuration
+# This make.local file is for SuperMike cluster at LSU
+
+# identifier for this local
+LOCAL = SuperMikeII 
+
+#Architecture 
+ARCH = Linux_x86_64_ifort_defaultMPI/
+
+# make sure PHYSICS and SOLVER are absolute path names, for example
+# specify the location of a full svn tree if you have one, like this:
+PPN = /home/kkadam1/CODES/nugrid
+
+# you don't need to change the following two but you can
+PHYSICS = $(PPN)/physics/phys08
+SOLVER = $(PPN)/solver/NFR
+
+# where is the se library?
+SEHOME = /home/kkadam1/opt/se-intel
+
+# where is mpi?
+MPIHOME = /usr/local/packages/openmpi/1.6.3/Intel-13.0.0/bin/mpif90

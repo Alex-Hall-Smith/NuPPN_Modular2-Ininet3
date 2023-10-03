@@ -1,0 +1,72 @@
+
+-include $(PCD)/Make.local
+PHYSICS = $(PPN)/physics
+SOLVER = $(PPN)/solver
+UTILS = $(PPN)/utils
+-include $(PCD)/ARCH/$(ARCH)/Makefile
+
+ONEUPWD := $(shell (cd ..;pwd))
+NPDATA = $(ONEUPWD)/NPDATA
+
+# get NNN ifrom isotopedatabase.txt and INDEX_REACLIB from ppn_physics.input
+pNNN = $(shell grep -m 1 NNN_max isotopedatabase.txt | awk -F"=" '{print $$2}' | awk '{print $$1}')
+pIDX_RCLB = $(shell grep INDEX_REACLIB ppn_physics.input | awk -F"=" '{print $$2}' | awk '{print $$1}')
+pNVCP = $(shell grep NVCP ppn_physics.input | awk -F"=" '{print $$2}' | awk '{print $$1}')
+
+$(info ********** COMPILING WITH THESE PARAMETERS **********)
+$(info NSP = $(pNNN) + $(pNVCP) + 20)
+$(info NRE = ($(pNNN) + $(pNVCP) + 20) * 15)
+$(info INDEX_REACLIB = $(pIDX_RCLB))
+$(info *****************************************************)
+
+
+# compile the code, copying back the executable
+
+all : tppnp $(NPDATA)
+	cp $(PCD)/tppnp.exe .
+
+debug : tppnp-debug
+	cp $(PCD)/tppnp.exe .
+
+tppnp : ppn_physics.input ppn_frame.input isotopedatabase.txt output
+	$(MAKE) pNNN=$(pNNN) pIDX_RCLB=$(pIDX_RCLB) pNVCP=$(pNVCP) pmsl=$(pmsl) pnrefmax=$(pnrefmax) pgfdim=$(pgfdim) -C $(PCD)
+	rsync -v --ignore-existing $(SOLVER)/run_template/ppn_solver.input .
+
+tppnp-debug : ppn_physics.input ppn_frame.input isotopedatabase.txt output
+	$(MAKE) debug pNNN=$(pNNN) pIDX_RCLB=$(pIDX_RCLB) pNVCP=$(pNVCP) pmsl=$(pmsl) pnrefmax=$(pnrefmax) pgfdim=$(pgfdim) -C $(PCD)
+
+isotopedatabase.txt:
+	rsync -v --ignore-existing $(PHYSICS)/run_template/isotopedatabase*.txt .
+
+ppn_physics.input:
+	rsync -v --ignore-existing $(PHYSICS)/run_template/ppn_physics.input .
+	$(info ***** ppn_physics.input not found)
+	$(info ***** fetching ppn_physics.input from $(PHYSICS)/run_template)
+
+output:
+	mkdir -p output
+
+# NPDATA sym link
+$(NPDATA):
+	ln -s $(PHYSICS)/NPDATA  $(ONEUPWD)/NPDATA
+
+# superLU libraries clean
+
+superclean:
+	$(MAKE) SOLVER=$(SOLVER) BLASLIB=$(BLASLIB) -C $(SOLVER)/source/SuperLU_5.0 clean
+
+# clean the whole frame and packages:
+
+distclean :
+	$(MAKE) clean
+	$(MAKE) distclean -C $(PCD)
+
+# clean local
+
+clean :
+	if [ -f tppnp.exe ]; then \
+		rm tppnp.exe; \
+	fi
+
+cleanoutput :
+	$(RM) output/abu.dat output/failures.txt output/num_done.txt

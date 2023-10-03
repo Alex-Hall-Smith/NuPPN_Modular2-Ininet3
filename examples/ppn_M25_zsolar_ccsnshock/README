@@ -1,0 +1,26 @@
+There are different trajectories available for processing in the directory 
+cases. Please select one in the top section of the run_me.sh script. 
+
+Then make the ppn executable with make command and execute the run_me.sh
+script. 
+
+clean_output	clean directory for a fresh run, all relevant files from 
+	  	any previous run will be deleted
+run_me.sh	use this to launch a new run, select the trajectory type
+		in the header section of this script
+
+This trajectory is from a 25 Msun model by Fryer et al (2017) using a KEPLER
+progenitor model by Alex Heger created for the NuGrid collaboration circa 2015.
+The explosion model name is run25f1_280M1.83ril. The initial abundances were
+from post-processing MPPNP calculations by Samuel Jones using the modular2
+branch of MPPNP, and are currently (2018) being prepared for submission to
+MNRAS in a paper about Fe60.
+The trajectory is for particle 1090, which was selected due to it having the
+largest production of fe60 in the shocked He shell.
+
+input files:
+------------
+
+* Note that the ppn_physics_st.input and ppn_physics_dcy.input files are used
+  at run time for the standard and decay runs, so the user must modify these 
+  instead of ppn_physics.input

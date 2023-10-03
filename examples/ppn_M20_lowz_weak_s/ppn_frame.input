@@ -1,0 +1,9 @@
+&ppn_frame
+
+	nsource       = 1
+	trajectory_fn = 'trajectory.input'
+	iabuini       = 11
+	ini_filename  = '../../frames/mppnp/USEEPP/iniab1.0E-05GN93_alpha.ppn'
+	iolevel       = 1
+
+/

@@ -1,0 +1,10 @@
+&ppn_frame
+
+        nsource = 1
+	trajectory_fn = 'trajectory.input'
+        iabuini = 2
+        ini_filename = 'initial_abundance.dat'
+	print_cycles = 100
+	terminal_cycles = 20
+
+/

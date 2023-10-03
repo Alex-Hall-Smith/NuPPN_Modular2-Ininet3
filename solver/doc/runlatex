@@ -1,0 +1,6 @@
+pdflatex nfr-chapter
+pdflatex nfr-chapter
+makeindex nfr-chapter
+bibtex nfr-chapter
+pdflatex nfr-chapter
+pdflatex nfr-chapter

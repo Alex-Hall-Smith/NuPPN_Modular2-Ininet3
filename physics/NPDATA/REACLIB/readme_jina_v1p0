@@ -1,0 +1,32 @@
+MP: May 16th, 2012
+
+for file winvne_v1.0_modified.dat versus winvne_v1.0.dat
+- the following species and partition function are added:
+
+- N24
+- O12,O27,O29,O31,O32,O33,O34
+- F32,F33,F34,F35,F36,f38
+- rb65
+- sr67
+- y69
+- zr71
+- nb73
+- mo75,mo76
+- tc77,tc78
+- ru79,ru80
+- rh81,rh82
+- pd83,pd84,pd85
+- ag85,ag86,ag87
+- cd87,cd88,cd89
+- in89,in90,in91
+- sn91,sn92,sn93
+- po277,po278,po279
+- at280,at281,at282
+
+not included in winvne_v1.0.dat.
+According to T. Rauscher, private communication, odd-even effect in partition functions in considered.
+Therefore, e.g. partition function of N24 is taken from N22. Partition function of O27 is taken from O25.
+Richard suggested instead to set partition function to 1.0 for these extra isotopes.
+
+Notice also that I add the al-6 and al*6 specie in winvne file, because in the way I am reading in the data, 
+I need to have consistent network between winvne and the main reaclib file. 

@@ -1,0 +1,16 @@
+#!/bin/bash
+#PBS -l nodes=2:ppn=2
+#PBS -l walltime=00:20:00
+#PBS -o out
+#PBS -e err
+#PBS -N mppnp_00
+
+
+cd $PBS_O_WORKDIR
+
+EXE=/global/home/fherwig/PPN/mppnp/CODE/mppnp.exe
+MPIEXEC=/global/home/fherwig/opt/openmpi-1.4.1/bin/mpiexec
+NPROC=4
+
+$MPIEXEC  -mpich-p4-no-shmem -np $NPROC $EXE
+

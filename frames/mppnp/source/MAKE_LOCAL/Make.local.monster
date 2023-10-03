@@ -1,0 +1,26 @@
+# Copy this file to Make.local and edit to suit your local
+# configuration
+
+# identifier for this local
+LOCAL = monster
+
+#Architecture 
+ARCH = Linux_x86_64_ifort_defaultMPI
+
+# make sure PHYSICS and SOLVER are absolute path names, for example
+# specify the location of a full svn tree if you have one, like this:
+PPN = /home/pignatav/work/mppnp_package_12july_11
+
+# you don't need to change the following two but you can
+PHYSICS = $(PPN)/physics/phys08
+#SOLVER = $(PPN)/solver/NFR_branch_SMS
+SOLVER = $(PPN)/solver/NFR
+
+# where is the se library?
+SEHOME = /home/pignatav/opt/se-intel
+
+
+LD_PATH_LAPACK=/home/pignatav/opt/acml/ifort64/lib
+LAPACK_LIBS = -lacml -lacml_mv
+
+

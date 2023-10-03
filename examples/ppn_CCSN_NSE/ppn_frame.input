@@ -1,0 +1,9 @@
+&ppn_frame
+
+        nsource = 1            		! source of outside trajectory
+	trajectory_fn = 'trajectory.input'
+	iabuini = 11           		! how to initialize
+        ini_filename = 'iniab.dat'
+        iolevel = 1            		! controls input/output
+
+/

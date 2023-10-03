@@ -1,0 +1,35 @@
+# Copy this file to Make.local and edit to suit your local
+# configuration
+
+#Architecture 
+ARCH =  GFORT
+
+# make sure PHYSICS and SOLVER are absolute path names, like this:
+#PPN = /rpod2/fherwig/PPN/forum.astro.keele.ac.uk/
+PPN = /home/swj/work/ppn/ppn_SJ_20151116
+
+# you don't need to change the following two but you can
+PHYSICS = $(PPN)/physics/phys08
+SOLVER = $(PPN)/solver/NFR
+
+# the MKL libraries should be selected via the environment setting
+#  scripts that are loaded from the .bashrc (see the latex
+#  documentation for the solver)
+
+# mkl_solver_lp64 is needed for the sparse solver
+# mkl_lapack is needed for the general lapack solver (mat_solv_option)
+#LAPACK_LIBS = -lmkl_lapack95_lp64 -lmkl_intel_lp64 -lmkl_intel_thread -lmkl_core -liomp5
+#intel 12 64 bit:
+#LAPACK_LIBS =-lmkl_intel_lp64 -lmkl_sequential -lmkl_lapack95_lp64 -lmkl_core -liomp5 
+
+# if I want to use ACML uncomment here below:
+LD_PATH_LAPACK = /opt/acml4.4.0/gfortran64/lib
+LAPACK_LIBS = -lacml -lacml_mv
+
+# do you want to use superLU (open source sparse matrix library)?
+# BLASLIB should be the same as in /home/swj/softs/SuperLU_5.0/make.inc
+# when superLU was built (BLASLIB should probably be the same as
+# the LAPACK_LIBS variable)
+USE_SUPERLU = YES
+BLASLIB = -L/opt/acml4.4.0/gfortran64/lib -lacml -lacml_mv
+

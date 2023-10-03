@@ -1,0 +1,9 @@
+  185  ed job.glacier
+  188  qsub job.glacier
+  189  qstat
+  225  showq -w user=fherwig
+  193  showq
+  195  qstat 5082259
+  196  qstat -a 5082259
+  208  qdel 5082259
+  221  showstart 5082260 

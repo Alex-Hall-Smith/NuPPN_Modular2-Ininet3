@@ -1,0 +1,23 @@
+# Copy this file to Make.local and edit to suit your local
+# configuration
+
+ARCH = INTEL
+
+# make sure PHYSICS and SOLVER are absolute path names, like this:
+
+PPN = /fondue/swj/nugrid/ppn_testing_20151116
+
+PHYSICS = $(PPN)/physics/phys08
+SOLVER = $(PPN)/solver/NFR
+
+# do you want to use superLU (open source sparse matrix library)?
+# BLASLIB should be the path to the blas, whether they be 
+# system blas (usually -L/usr/lib/libblas -lblas)
+# openblas libraries (/usr/lib -lopenblas)
+# intel MKL (-lmkl_intel_lp64 -lmkl_intel_thread -lmkl_lapack95_lp64 -lmkl_core
+# -liomp5 -lpthread)
+# ACML (-L/opt/acml-4-4-0/gfortran64/lib -lacml -lacml_mv)
+# etc ...
+USE_SUPERLU = YES
+BLASLIB = -lmkl_intel_lp64 -lmkl_intel_thread -lmkl_lapack95_lp64 -lmkl_core -liomp5 -lpthread
+

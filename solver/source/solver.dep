@@ -1,0 +1,47 @@
+# This file is generated automatically. DO NOT EDIT!
+
+decay.o : 
+
+solver.o :  \
+	jac_rhs.o \
+	backward_euler.o \
+	solver_diagnostics.o \
+	bader_deuflhard.o \
+	nse_solver.o \
+	solver_knobs.o
+
+solver_diagnostics.o : 
+
+linalg.o :  \
+	sparsekit_module.o \
+	solver_knobs.o
+
+lapack.o : 
+
+nse_solver.o :  \
+	backward_euler.o \
+	solver_diagnostics.o \
+	solver_knobs.o
+
+solver_knobs.o : 
+
+sparsekit_module.o : 
+
+backward_euler.o :  \
+	linalg.o \
+	jac_rhs.o \
+	sparsekit_module.o \
+	solver_diagnostics.o \
+	solver_knobs.o
+
+jac_rhs.o :  \
+	sparsekit_module.o \
+	solver_diagnostics.o \
+	solver_knobs.o
+
+bader_deuflhard.o :  \
+	linalg.o \
+	jac_rhs.o \
+	sparsekit_module.o \
+	solver_diagnostics.o \
+	solver_knobs.o

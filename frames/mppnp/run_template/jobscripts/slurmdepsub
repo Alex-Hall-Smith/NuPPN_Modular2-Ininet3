@@ -1,0 +1,25 @@
+#!/bin/bash
+# submit dependent jobs using slurm
+
+### CHANGE THESE VARIABLES ###
+# your submission file
+jobfile="test.job"
+# how many jobs to you want to submit in total
+tjobno=3
+### END OF CHANGE ###
+
+# get job id -> from print "Successfully submited job ID" -> ID is $4
+# also submit first job 
+latest_id=$(sbatch $jobfile | awk ' { print $4 }')
+echo "Submitted 1st job with Job-ID ${latest_id}"
+
+# run dependant jobs
+for ((i=2; i<=$tjobno; i++)) do
+   latest_id_tmp=$(sbatch --dependency=afterok:$latest_id $jobfile | awk ' { print $4 }')
+   echo "Submitted ${i}th job with Job-ID ${latest_id_tmp}"
+   latest_id=$latest_id_tmp
+done
+
+
+# Adopted from Justin Talbot and Ralph Bean
+# http://docs.rc.rit.edu/cluster/advanced.html

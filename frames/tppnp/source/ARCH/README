@@ -1,0 +1,18 @@
+ARCH is a combination of
+OS_PROC_FORT
+
+where 
+
+OS is the operating system as given by the
+uname -s command e.g. OS=Darwin
+
+PROCS is the hardware, as given by the uname -m command
+e.g. PROCS=x86_64
+
+FORT is the fortran compiler as in
+FORT=ifort or gfort
+
+For example, the following is the ARCH name for a 64bit intel Linux box with
+ifort:
+
+ARCH=Linux_x86_64_ifort

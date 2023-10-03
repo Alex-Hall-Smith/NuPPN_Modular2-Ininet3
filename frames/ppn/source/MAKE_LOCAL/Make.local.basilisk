@@ -1,0 +1,30 @@
+# Copy this file to Make.local and edit to suit your local
+# configuration
+
+ARCH = INTEL
+
+# make sure PHYSICS and SOLVER are absolute path names, like this:
+
+PPN = /home/pignatav/ppn_package_1dec
+
+PHYSICS = $(PPN)/physics/phys08
+SOLVER = $(PPN)/solver/NFR
+#We are testing the MKL solver, uncomment the next line
+#SOLVER = $(PPN)/solver/NFR_branch_SMS
+
+# the MKL libraries should be selected via the environment setting
+#  scripts that are loaded from the .bashrc (see the latex
+#  documentation for the solver)
+
+# mkl_solver_lp64 is needed for the sparse solver
+# mkl_lapack is needed for the general lapack solver (mat_solv_option)
+#LD_PATH_LAPACK=/soft/intel/mkl/10.0.1.014/lib/em64t
+#LAPACK_LIBS = -lmkl_lapack -lmkl_solver_lp64 -lmkl_intel_lp64 -lmkl_intel_thread -lmkl_core -liomp5 -lpthread
+#LD_PATH_LAPACK=/home/pignatav/opt/acml4.4.0/ifort64_mp/lib
+LD_PATH_LAPACK=/home/pignatav/opt/acml4.4.0/ifort64/lib
+LAPACK_LIBS = -lacml -lacml_mv
+#LAPACK_LIBS = -llibacml -llibacml_mv -llibifcoremt_pic -llibimf -llibirc -llibsvml
+#LAPACK_LIBS = -lacml -lacml_mv -lifcoremt_pic -limf -lirc -lsvml
+#LD_PATH=/home/pignatav/opt/acml4.4.0/ifort64_mp/lib
+#LAPACK_LIBS = -llibacml_mp -llibacml_mv -llibifcoremt_pic -llibimf -llibiomp5 -llibirc -llibsvml
+#LD_LIBRARY_PATH=/home/pignatav/opt/acml4.4.0/ifort64/lib

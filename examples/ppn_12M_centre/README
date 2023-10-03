@@ -1,0 +1,13 @@
+There are different trajectories available for processing in the directory 
+cases. Please select one in the top section of the run_me.sh script. 
+
+Then make the ppn executable with make command and execute the run_me.sh
+script. 
+
+clean_output	clean directory for a fresh run, all relevant files from 
+	  	any previous run will be deleted
+run_me.sh	use this to launch a new run, select the trajectory type
+		in the header section of this script
+
+The trajectories have been provided by Samuel Jones, based on his MESA
+simulations (Jones et al. 2013, ApJ 772 150).

@@ -1,0 +1,15 @@
+&ppn_frame
+
+	t9 =     1.001362e+01
+	rho =     5.391697e+07
+        nsource   = 1 ! 2
+        iabuini   = 4     ! just give Ye and get rest from NSE      ! how to initialize
+	ye_initial =     4.363314e-01
+	print_cycles = 20
+	terminal_cycles = 1
+
+	!print_rate = .true.
+	!which_rate = 8663
+
+/
+

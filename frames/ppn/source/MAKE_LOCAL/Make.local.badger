@@ -1,0 +1,13 @@
+# Copy this file to Make.local and edit to suit your local
+# configuration
+
+#Architecture 
+ARCH =  GFORT
+
+# make sure PHYSICS and SOLVER are absolute path names, like this:
+PPN = /users/swjones/softs/NuPPN
+
+# do you want to use superLU (open source sparse matrix library)?
+# BLASLIB should be the path to the openblas libraries (usually /usr/lib/libblas)
+USE_SUPERLU = YES
+BLASLIB = -lblas

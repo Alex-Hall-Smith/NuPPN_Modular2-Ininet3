@@ -1,0 +1,32 @@
+# Copy this file to Make.local and edit to suit your local
+# configuration
+
+# identifier for this local
+LOCAL = soul
+
+#Architecture 
+ARCH =  Linux_x86_64_gfortran
+
+# make sure PHYSICS and SOLVER are absolute path names, for example
+# specify the location of a full svn tree if you have one, like this:
+#PPN = /rpod2/fherwig/PPN/forum.astro.keele.ac.uk/
+PPN = /home/swj/work/NuPPN
+
+# you don't need to change the following two but you can
+PHYSICS = $(PPN)/physics/phys08
+SOLVER = $(PPN)/solver/NFR
+SOLVER = $(PPN)/utils
+
+# where is mpi?
+#MPIHOME = /home/softs/openmpi-1.6.4-intel
+MPIHOME=/home/swj/softs/openmpi-1.10.1-build
+
+# do you want to use superLU (open source sparse matrix library)?
+# BLASLIB should be the path to openblas libraries (usually /usr/lib/libblas)
+USE_SUPERLU = YES
+BLASLIB = -L/usr/lib/libopenblas.a -lopenblas
+# BLASLIB = -L/$(PPN)/utils/lib -lopenblas
+# BLASLIB = -L/opt/acml4.4.0/gfortran64/lib -lacml -lacml_mv
+# BLASLIB = -lmkl_lapack95_lp64 -lmkl_intel_lp64 -lmkl_intel_thread -lmkl_core -liomp5
+# BLASLIB = -L/usr/lib/libblas -lblas
+

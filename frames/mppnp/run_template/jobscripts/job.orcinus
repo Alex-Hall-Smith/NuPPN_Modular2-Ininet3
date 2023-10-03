@@ -1,0 +1,22 @@
+#!/bin/bash
+#PBS -l procs=60
+#PBS -l walltime=3:00:00
+#PBS -l qos=parallel
+#PBS -o out
+#PBS -e err
+#PBS -N mppnp_01
+
+
+module load intel/11.0.074
+
+cd $PBS_O_WORKDIR
+
+EXE=/global/home/fherwig/PPN/mppnp/CODE/mppnp.exe
+MPIEXEC=mpiexec
+
+$MPIEXEC  $EXE
+
+
+
+
+

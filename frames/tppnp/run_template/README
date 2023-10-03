@@ -1,0 +1,36 @@
+# Running a new tppnp problem - follow these steps:
+
+1. check out the frames, physics and solver packages:
+
+svn co svn://forum.astro.keele.ac.uk/solver solver
+svn co svn://forum.astro.keele.ac.uk/frames frames
+svn co svn://forum.astro.keele.ac.uk/physics physics
+
+2. set up the Make.local file in the frames/mppnp/CODE directory (the templates
+in the MAKE_LOCAL directory are a good starting point)
+
+3. in the mppnp directoy, make a copy of the RUN_TEMPLATE:
+
+cd frames/mppnp/
+cp -rf RUN_TEMPLATE RUN1
+
+4. go into your new run directory and compile the code (cleaning beforehand so
+that the executable you produce is the correct one)
+
+make distclean
+make
+
+5. prepare your input files; the three input files that define the problem are 
+
+ppn_frame.input	      everything related to the I/O, data handling etc
+ppn_physics.input     determine nuclear physics input
+ppn_solver.input      specify input parameters related to the numerical solver
+
+#Plotting: 
+
+Use nugridse.py from utils/pylib in the svn tree or easy_install/pip as
+specified in http://nugridpy.phys.uvic.ca:
+    pip install nugridpy
+or
+    easy_install nugridpy
+

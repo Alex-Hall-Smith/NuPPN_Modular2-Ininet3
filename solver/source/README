@@ -1,0 +1,7 @@
+Thu Sep  3 11:32:20 PDT 2009
+
+I need to enter the mkl initialisztion statements from
+ppn_solver.f.initialiseMKL into ppn_solver.f which already has the
+right stuctural changes. The correct Makefile statements should be in
+the PPN Makefile ARCH INTEL_MKL or something like that
+

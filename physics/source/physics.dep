@@ -1,0 +1,125 @@
+# This file is generated automatically. DO NOT EDIT!
+
+fuller.o : 
+
+netgen.o :  \
+	reaction_info.o \
+	nuc_data.o
+
+screening_chugunov.o : 
+
+screening_graboske.o :  \
+	nuc_data.o
+
+ppn_physics.o :  \
+	kadonis.o \
+	reaclib.o \
+	jbj16.o \
+	fuller.o \
+	networksetup.o \
+	alpha_decays.o \
+	vital.o \
+	rates.o \
+	nkk04.o \
+	isomers.o \
+	neutrinos.o \
+	other_nuc.o \
+	nuc_data.o \
+	physics_knobs.o \
+	netgen.o \
+	reaction_info.o \
+	network_boundaries.o
+
+neutrinos.o :  \
+	physics_knobs.o \
+	nuc_data.o
+
+screening.o :  \
+	physics_knobs.o \
+	screening_chugunov.o \
+	nuc_data.o \
+	screening_graboske.o
+
+physics_knobs.o : 
+
+reaclib.o :  \
+	reaction_info.o \
+	physics_knobs.o \
+	nuc_data.o
+
+nkk04.o :  \
+	physics_knobs.o
+
+reaction_info.o : 
+
+rates.o :  \
+	kadonis.o \
+	fuller.o \
+	nkk04.o \
+	netgen.o \
+	reaction_info.o \
+	reaclib.o \
+	other_nuc.o \
+	jbj16.o
+
+evaluate_rates.o :  \
+	reverse.o \
+	reaction_info.o \
+	physics_knobs.o \
+	vital.o \
+	rates.o \
+	screening.o \
+	ppn_physics.o \
+	nuc_data.o
+
+nse_swj.o :  \
+	reaclib.o \
+	nuc_data.o
+
+jbj16.o :  \
+	physics_knobs.o
+
+nuc_data.o : 
+
+nse_torch.o :  \
+	reaclib.o \
+	nuc_data.o
+
+reverse.o :  \
+	reaction_info.o \
+	reaclib.o \
+	nse_swj.o \
+	nuc_data.o \
+	rates.o
+
+vital.o :  \
+	reaction_info.o \
+	physics_knobs.o \
+	rates.o \
+	nuc_data.o
+
+network_boundaries.o : 
+
+abundances.o :  \
+	nse_torch.o \
+	nse_swj.o \
+	nuc_data.o
+
+kadonis.o :  \
+	physics_knobs.o
+
+alpha_decays.o :  \
+	nuc_data.o
+
+networksetup.o :  \
+	reaction_info.o \
+	rates.o \
+	nuc_data.o
+
+other_nuc.o :  \
+	reaction_info.o
+
+isomers.o :  \
+	physics_knobs.o \
+	rates.o \
+	nuc_data.o

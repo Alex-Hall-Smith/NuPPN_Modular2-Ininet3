@@ -1,0 +1,4 @@
+3
+w15ng    Weigand et al. (2015) PHYSICAL REVIEW C 92, 045810 Ni63(n,g)
+w17ng    Weigand et al. (2017) PHYSICAL REVIEW C 95, 015808 Cu63(n,g)
+p19ng    Prokop, Couture et al. in prep (2019), Cu65(n,g)

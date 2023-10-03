@@ -1,0 +1,31 @@
+# Copy this file to Make.local and edit to suit your local
+# configuration
+
+ARCH = INTEL
+
+# make sure PHYSICS and SOLVER are absolute path names, like this:
+
+PPN = /home/nugrid/forum.astro.keele.ac.uk
+
+PHYSICS = $(PPN)/physics/phys08
+SOLVER = $(PPN)/solver/NFR
+
+# the MKL libraries should be selected via the environment setting
+#  scripts that are loaded from the .bashrc (see the latex
+#  documentation for the solver) if you want to use MKL solvers
+#  (significantly faster solver for larger networks) then LAPACK_LIBS
+#  needs to be defined; defining LAPACK_LIBS makes available
+#  mat_solv_option = 3 in ppn_solver
+
+# mkl_solver_lp64 is needed for the sparse solver
+# mkl_lapack is needed for the general lapack solver (mat_solv_option)
+# Note: the exact name of the required libraries may change from one version
+#       of MKL to another, and from 32bit to 64bit version. If libraries can 
+#       not be found check the mkl documantation for the correct library
+#       name. 
+# The following is for 64bit /mkl 11.1 (e.g. helix/Linux):
+#LAPACK_LIBS = -lmkl_lapack -lmkl_solver_lp64 -lmkl_intel_lp64 -lmkl_intel_thread -lmkl_core -liomp5
+# The following is for 32bit mkl 10.0.1 (e.g. vortex/Mac Laptop):
+#LAPACK_LIBS = -lmkl_lapack -lmkl_solver -lmkl_intel -lmkl_intel_thread -lguide
+# The following is for 32bit composerxe-2011.1.122/mkl (e.g. nubuntu furnished Linux):
+LAPACK_LIBS =  -lmkl_intel -lmkl_sequential -lmkl_core -lpthread -lmkl_lapack95

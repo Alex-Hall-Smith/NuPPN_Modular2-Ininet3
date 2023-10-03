@@ -1,0 +1,8 @@
+rm -f *DAT
+rm -f x-time.dat
+rm -f *png
+rm -f *~
+rm -f selem*
+rm -f networksetup.txt
+rm -f iniab.dat
+rm -f trajectory.input

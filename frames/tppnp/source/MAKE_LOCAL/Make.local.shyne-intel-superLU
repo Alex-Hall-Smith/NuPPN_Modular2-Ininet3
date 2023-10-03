@@ -1,0 +1,29 @@
+# Copy this file to Make.local and edit to suit your local
+# configuration
+
+# identifier for this local
+LOCAL = shyne
+
+#Architecture 
+ARCH =  Linux_x86_64_ifort
+
+# make sure PHYSICS and SOLVER are absolute path names, for example
+# specify the location of a full svn tree if you have one, like this:
+#PPN = /rpod2/fherwig/PPN/forum.astro.keele.ac.uk/
+PPN = /shyne/swj/NuPPN
+
+# you don't need to change the following two but you can
+PHYSICS = $(PPN)/physics/phys08
+SOLVER = $(PPN)/solver/NFR
+
+# where is mpi?
+MPIHOME=/opt/platform_mpi
+
+# the MKL libraries should be selected via the environment setting
+#  scripts that are loaded from the .bashrc (see the latex
+#  documentation for the solver)
+
+LAPACK_LIBS = -lmkl_intel_lp64 -lmkl_sequential -lmkl_lapack95_lp64 -lmkl_core -liomp5
+
+USE_SUPERLU = YES
+BLASLIB = -lmkl_intel_lp64 -lmkl_sequential -lmkl_lapack95_lp64 -lmkl_core -liomp5

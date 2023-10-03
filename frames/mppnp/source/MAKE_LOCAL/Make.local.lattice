@@ -1,0 +1,23 @@
+# Copy this file to Make.local and edit to suit your local
+# configuration
+
+# identifier for this local
+LOCAL = lattice
+
+#Architecture 
+ARCH = Linux_x86_64_ifort_defaultMPI
+
+# make sure PHYSICS and SOLVER are absolute path names, for example
+# specify the location of a full svn tree if you have one, like this:
+PPN = /global/scratch/fherwig/PPN
+
+# you don't need to change the following two but you can
+PHYSICS = $(PPN)/physics/phys08
+SOLVER = $(PPN)/solver/NFR
+
+# where is the se library?
+SEHOME = /home/fherwig/opt/se
+#intel 12 64 bit:
+#LAPACK_LIBS =-lmkl_intel_lp64 -lmkl_intel_thread -lmkl_lapack95_lp64 -lmkl_core -openmp -lpthread
+#LAPACK_LIBS =-lmkl_intel_lp64 -lmkl_intel_thread -lmkl_lapack95_lp64 -lmkl_core -liomp5 
+LAPACK_LIBS =-lmkl_intel_lp64  -lmkl_sequential -lmkl_lapack95_lp64 -lmkl_core -liomp5 

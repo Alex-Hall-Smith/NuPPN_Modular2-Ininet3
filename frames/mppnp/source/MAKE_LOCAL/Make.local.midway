@@ -1,0 +1,31 @@
+#Copy this file (or any of the machine specific Make.local.machines
+# files) to Make.local and edit to suit your local configuration
+# IMPORTANT:
+# Midway is module based, make sure you have the following modules loaded:
+# intel, mkl, openmpi/1.6+intel-12.1
+# Load using module load <NAME>
+
+# Necessary to adopt: PPN, SEHOME
+
+# identifier for this local
+LOCAL = midway
+
+#Architecture 
+ARCH =  Linux_x86_64_ifort
+
+# make sure PHYSICS and SOLVER are absolute path names, for example
+# specify the location of a full svn tree if you have one, like this:
+PPN = /scratch/midway/trappitsch/forum.astro.keele.ac.uk
+
+# you don't need to change the following two but you can
+PHYSICS = $(PPN)/physics/phys08
+SOLVER = $(PPN)/solver/NFR
+
+# where is the se library?
+SEHOME = /scratch/midway/trappitsch/opt/se-1.2_ifort
+
+# where is mpi?
+MPIHOME = /software/openmpi-1.6-el6-x86_64+intel-12.1
+
+# LAPACK LIBS
+LAPACK_LIBS =-lmkl_intel_lp64 -lmkl_sequential -lmkl_lapack95_lp64 -lmkl_core -liomp5

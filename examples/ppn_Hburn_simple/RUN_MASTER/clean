@@ -1,0 +1,3 @@
+rm -f *DAT
+rm -f x-time.dat
+rm -f *png

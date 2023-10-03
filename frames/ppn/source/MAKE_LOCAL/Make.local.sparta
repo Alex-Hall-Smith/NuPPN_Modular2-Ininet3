@@ -1,0 +1,44 @@
+# Copy this file to Make.local and edit to suit your local
+# configuration
+
+ARCH = INTEL
+
+# make sure PHYSICS and SOLVER are absolute path names, like this:
+
+PPN = /home/marco/work/ppn_package_7nov_2015
+
+PHYSICS = $(PPN)/physics/phys08
+SOLVER = $(PPN)/solver/NFR
+#We are testing the MKL solver, uncomment the next line and set use_mkl=yes
+#SOLVER = $(PPN)/solver/NFR_branch_SMS
+
+# the MKL libraries should be selected via the environment setting
+#  scripts that are loaded from the .bashrc (see the latex
+#  documentation for the solver)
+
+# the MKL libraries should be selected via the environment setting
+#  scripts that are loaded from the .bashrc (see the latex
+#  documentation for the solver)
+
+# if you don't want to use MKL solvers uncomment the following line
+#use_mkl = no
+
+# if you want to use MKL solvers (significantly faster solver for larger networks) 
+use_mkl = yes
+
+# for intel 32 bit
+#LD_PATH_LAPACK=/home/marco/intel/Compiler/11.1/073/mkl/lib/32
+#LAPACK_LIBS = -lmkl_intel -lmkl_intel_thread -lmkl_lapack95 -lmkl_core -liomp5 -lpthread
+
+#intel 12 64 bit:
+LAPACK_LIBS =-lmkl_intel_lp64 -lmkl_intel_thread -lmkl_lapack95_lp64 -lmkl_core -liomp5 -lpthread
+
+# do you want to use superLU (open source sparse matrix library)?
+# BLASLIB should be the same as in /home/swj/softs/SuperLU_5.0/make.inc
+# when superLU was built (BLASLIB should probably be the same as
+# the LAPACK_LIBS variable)
+SUPERLU_PATH = /home/marco/opt/SuperLU_5.0
+BLASLIB = -L/opt/intel/lib/intel64/ -lmkl_intel_lp64 -lmkl_intel_thread -lmkl_lapack95_lp64 -lmkl_core -liomp5 -lpthread
+
+
+

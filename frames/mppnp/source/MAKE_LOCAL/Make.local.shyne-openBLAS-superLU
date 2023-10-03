@@ -1,0 +1,28 @@
+# Copy this file to Make.local and edit to suit your local
+# configuration
+
+# identifier for this local
+LOCAL = shyne
+
+#Architecture 
+ARCH =  Linux_x86_64_ifort
+
+# make sure PHYSICS and SOLVER are absolute path names, for example
+# specify the location of a full svn tree if you have one, like this:
+#PPN = /rpod2/fherwig/PPN/forum.astro.keele.ac.uk/
+PPN = /shyne/swj/nugrid/ppn-testing-20151116
+
+# you don't need to change the following two but you can
+PHYSICS = $(PPN)/physics/phys08
+SOLVER = $(PPN)/solver/NFR
+
+# where is the se library?
+#SEHOME = /rpod2/opt/helix_falk/se
+SEHOME = /home/softs/se-1.2-intel
+
+# where is mpi?
+#MPIHOME = /home/softs/openmpi-1.6.4-intel
+MPIHOME=/opt/platform_mpi
+
+USE_SUPERLU = YES
+BLASLIB = -L/shyne/swj/softs/OpenBLAS/build/lib -Wl,-rpath=/shyne/swj/softs/OpenBLAS/build/lib -lopenblas

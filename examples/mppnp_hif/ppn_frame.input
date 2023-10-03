@@ -1,0 +1,44 @@
+! this file is for setting control parameters for running mppnp
+! (copied from the mesa/star inlist file created by Bill Paxton, thanks Bill!)
+! please go to the bottom of this file to learn how the namelists work
+
+! for detailed documentaion see ../DOC/mppnp-chapter.pdf and of course the code
+
+&ppn_frame
+
+	iabuini = 0	! initialisation
+    	iolevel = 1     ! how much output do you want, >4 is for debugging
+
+        sig_term_limit = 1d+10  ! upper limit for diffusion coefficients similar to that in MESA
+
+	modstart = 77991    	! start model for post-processing  
+
+	modstop  = 79991  ! 79991 RUN103 final cycle
+	!modstop = 80993 ! 80993 RUN48 final cycle
+
+	!xmrmin = 0 !0.57556   ! RUN48 min mass coordinate for pp
+	!xmrmax = 0.5987    ! RUN48 max mass coordinate
+	xmrmin  = 0 !0.5811 min RUN103
+	xmrmax  = 0.603 !max RUN103
+
+        code_source = 'EVL' ! which stellar code was used ? 
+        datdir = 'SE'
+	prefix = 'e2D14_hif'
+
+	trestart = 1.5   ! write restart file every trestart hours 
+        tstop    = 5000. ! stop the program after tstop hours 
+	nprno  = 1	 ! cycle interval for standard output
+	nprnr  = 1	 ! cycle interval for restart outpu
+	ioutc  = 100     ! number of output cycles per h5 restart file
+
+        hif = 1   ! HIF modification on: 1, off: 0
+
+/
+
+! Some other parameters concernng grid refinement:
+
+        msl = 5000   ! maximum number of spatial zones
+        nrefmax = 23 ! refinement level
+        gfdim = 20   ! max num of refinement species
+
+! *** end of namelist

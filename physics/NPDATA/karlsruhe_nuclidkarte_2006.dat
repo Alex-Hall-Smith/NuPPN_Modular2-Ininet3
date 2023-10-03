@@ -1,0 +1,337 @@
+# Magill, J., Pfennig, G. and Galy, J. 2006
+# names            Z        A    half-life    unit    Q (Mev)
+  ND144    CE140   60      144    2.29d+15    year    -
+  PM145    PR141   61      145    1.00d+31    year    -
+  SM146    ND142   62      146    1.03d+08    year    -
+  SM147    ND143   62      147    1.06d+11    year    -
+  SM148    ND144   62      148    7.00d+15    year    -
+  EU147    PM143   63      147    1.00d+31    year    -     
+  EU148    PM144   63      148    1.00d+31    year    - 
+  GD148    SM144   64      148    7.46d+01    year    -
+  GD149    SM145   64      149    1.00d+31    year    -
+  GD150    SM146   64      150    1.80d+06    year    -
+  GD151    SM147   64      151    1.00d+31    year    -
+  GD152    SM148   64      152    1.10d+14    year    -
+  TB149    EU145   65      149    1.00d+31    year    -
+  TB150    EU146   65      150    1.00d+31    year    -
+  TB151    EU147   65      151    1.00d+31    year    -        
+  DY150    GD146   66      150    1.00d+31    year    -
+  DY151    GD147   66      151    1.00d+31    year    -
+  DY152    GD148   66      152    1.00d+31    year    -
+  DY153    GD149   66      153    1.00d+31    year    -
+  DY154    GD150   66      154    3.00d+06    year    -
+  HO151    TB147   67      151    1.00d+31    year    -
+  HO152    TB148   67      152    1.00d+31    year    -
+  HO153    TB149   67      153    1.00d+31    year    -
+  HO154    TB150   67      154    1.00d+31    year    -
+  ER152    DY148   68      152    1.00d+31    year    -
+  ER153    DY149   68      153    1.00d+31    year    -
+  ER154    DY150   68      154    1.00d+31    year    -
+  ER155    DY151   68      155    1.00d+31    year    -
+  TM153    HO149   69      153    1.00d+31    year    -
+  TM154    HO150   69      154    1.00d+31    year    -
+  TM155    HO151   69      155    1.00d+31    year    -
+  TM156    HO152   69      156    1.00d+31    year    -
+  YB154    ER150   70      154    1.00d+31    year    -
+  YB155    ER151   70      155    1.00d+31    year    -
+  YB156    ER152   70      156    1.00d+31    year    -
+  YB157    ER153   70      157    1.00d+31    year    -
+  YB158    ER154   70      158    1.00d+31    year    -
+  LU155    TM151   71      155    7.00d+01    msec    -
+  LU156    TM152   71      156    4.90d-01    secs    -
+  LU157    TM153   71      157    1.00d+31    year    -
+  LU158    TM154   71      158    1.00d+31    year    -
+  LU159    TM155   71      159    1.00d+31    year    -
+  HF156    YB152   72      156    2.50d+01    msec    -
+  HF157    YB153   72      157    1.10d+02    msec    -
+  HF158    YB154   72      158    1.00d+31    year    -
+  HF159    YB155   72      159    1.00d+31    year    -
+  HF160    YB156   72      160    1.00d+31    year    -
+  HF161    YB157   72      161    1.00d+31    year    -
+  HF162    YB158   72      162    1.00d+31    year    -
+  TA157    LU153   73      157    1.00d+01    msec    -
+  TA158    LU154   73      158    4.90d+01    msec    -
+  TA159    LU155   73      159    5.00d-01    secs    -
+  TA160    LU156   73      160    1.70d+00    secs    -
+  TA161    LU157   73      161    1.00d+31    year    -
+  TA162    LU158   73      162    1.00d+31    year    -
+  TA163    LU159   73      163    1.00d+31    year    -
+  W 158    HF154   74      158    1.50d+00    msec    -
+  W 159    HF155   74      159    7.30d+00    msec    -
+  W 160    HF156   74      160    8.10d+01    msec    -
+  W 161    HF157   74      161    4.10d-01    secs    -
+  W 162    HF158   74      162    1.39d-00    secs    -
+  W 163    HF159   74      163    2.50d-00    secs    -
+  W 164    HF160   74      164    1.00d+31    year    -
+  W 165    HF161   74      165    1.00d+31    year    -
+  W 166    HF162   74      166    1.00d+31    year    -
+  W 167    HF163   74      167    1.00d+31    year    -
+  W 168    HF164   74      168    1.00d+31    year    -
+  RE160    TA156   75      160    1.00d+31    year    -
+  RE161    TA157   75      161    1.00d+31    year    -
+  RE162    TA158   75      162    1.07d+02    msec    -
+  RE163    TA159   75      163    3.90d-01    secs    -
+  RE164    TA160   75      164    3.80d-01    secs    -
+  RE165    TA161   75      165    1.00d+31    year    -
+  RE166    TA162   75      166    1.00d+31    year    -
+  RE167    TA163   75      167    3.40d+00    secs    -
+  RE168    TA164   75      168    1.00d+31    year    -
+  RE169    TA165   75      169    1.00d+31    year    -
+  OS162    W 158   76      162    1.50d+00    msec    -
+  OS163    W 159   76      163    5.50d+00    msec    -
+  OS164    W 160   76      164    2.10d+01    msec    -
+  OS165    W 161   76      165    7.30d+01    msec    -
+  OS166    W 162   76      166    1.94d+02    msec    -
+  OS167    W 163   76      167    6.50d-01    secs    -
+  OS168    W 164   76      168    2.10d+00    secs    -
+  OS169    W 165   76      169    1.00d+31    year    -
+  OS170    W 166   76      170    1.00d+31    year    -
+  OS171    W 167   76      171    1.00d+31    year    -
+  OS172    W 168   76      172    1.00d+31    year    -
+  OS173    W 169   76      173    1.00d+31    year    -
+  OS174    W 170   76      174    1.00d+31    year    -
+  IR165    RE161   77      165    1.00d+31    year    -
+  IR166    RE162   77      166    1.05d+01    msec    -
+  IR167    RE163   77      167    3.52d+01    msec    -
+  IR168    RE164   77      168    1.60d-01    secs    -
+  IR169    RE165   77      169    6.40d-01    secs    -
+  IR170    RE166   77      170    1.00d+31    year    -
+  IR171    RE167   77      171    3.20d+00    secs    -
+  IR172    RE168   77      172    1.00d+31    year    -
+  IR173    RE169   77      173    1.00d+31    year    -
+  IR174    RE170   77      174    1.00d+31    year    -
+  IR175    RE171   77      175    1.00d+31    year    -
+  IR176    RE172   77      176    1.00d+31    year    -
+  IR177    RE173   77      177    1.00d+31    year    -
+  PT166    OS162   78      166    3.00d-01    msec    -
+  PT167    OS163   78      167    7.00d-01    msec    -
+  PT168    OS164   78      168    2.00d+00    msec    -
+  PT169    OS165   78      169    2.50d+00    msec    -
+  PT170    OS166   78      170    1.47d+01    msec    -
+  PT171    OS167   78      171    2.50d+01    msec    -
+  PT172    OS168   78      172    1.00d-01    secs    -
+  PT173    OS169   78      173    3.30d-01    secs    -
+  PT174    OS170   78      174    9.00d-01    secs    -
+  PT175    OS171   78      175    2.52d-00    secs    -
+  PT176    OS172   78      176    6.33d-00    secs    -
+  PT177    OS173   78      177    1.00d+31    year    -
+  PT178    OS174   78      178    1.00d+31    year    -
+  PT179    OS175   78      179    1.00d+31    year    -
+  PT180    OS176   78      180    1.00d+31    year    -
+  PT181    OS177   78      181    1.00d+31    year    -
+  PT182    OS178   78      182    1.00d+31    year    -
+  PT183    OS179   78      183    1.00d+31    year    -
+  PT184    OS180   78      184    1.00d+31    year    -
+  PT185    OS181   78      185    1.00d+31    year    -
+  PT186    OS182   78      186    1.00d+31    year    -
+  AU170    IR166   79      170    1.00d+31    year    -
+  AU171    IR167   79      171    1.00d+31    year    -
+  AU172    IR168   79      172    4.00d+00    msec    -
+  AU173    IR169   79      173    2.50d+01    msec    -
+  AU174    IR170   79      174    1.39d+02    msec    -
+  AU175    IR171   79      175    1.00d-01    secs    -
+  AU176    IR172   79      176    1.08d+00    secs    -
+  AU177    IR173   79      177    1.18d+00    secs    -
+  AU178    IR174   79      178    2.60d+00    secs    -
+  AU179    IR175   79      179    7.10d+00    secs    -
+  AU180    IR176   79      180    1.00d+31    year    -
+  AU181    IR177   79      181    1.00d+31    year    -
+  AU182    IR178   79      182    1.00d+31    year    -
+  AU183    IR179   79      183    1.00d+31    year    -
+  AU184    IR180   79      184    1.00d+31    year    -
+  AU185    IR181   79      185    1.00d+31    year    -
+  AU186    IR182   79      186    1.00d+31    year    -
+  AU187    IR183   79      187    1.00d+31    year    -
+  HG171    PT167   80      171    6.00d+01    muse    -
+  HG172    PT168   80      172    3.00d-01    msec    -
+  HG173    PT169   80      173    1.10d-00    msec    -
+  HG174    PT170   80      174    2.10d-00    msec    -
+  HG175    PT171   80      175    1.30d+01    msec    -
+  HG176    PT172   80      176    2.10d+01    msec    -
+  HG177    PT173   80      177    1.70d-01    secs    -
+  HG178    PT174   80      178    2.60d-01    secs    -
+  HG179    PT175   80      179    1.09d-00    secs    -
+  HG180    PT176   80      180    1.00d+31    year    -
+  HG181    PT177   80      181    1.00d+31    year    -
+  HG182    PT178   80      182    1.00d+31    year    -
+  HG183    PT179   80      183    1.00d+31    year    -
+  HG184    PT180   80      184    1.00d+31    year    -
+  HG185    PT181   80      185    1.00d+31    year    -
+  HG186    PT182   80      186    1.00d+31    year    -
+  HG187    PT183   80      187    1.00d+31    year    -
+  HG188    PT184   80      188    1.00d+31    year    -
+  TL177    AU173   81      177    1.00d+31    year    -
+  TL178    AU174   81      178    2.55d+02    msec    -
+  TL179    AU175   81      179    2.70d-01    secs    -
+  TL180    AU176   81      180    1.50d+00    secs    -
+  TL181    AU177   81      181    3.20d+00    secs    -
+  TL182    AU178   81      182    1.00d+31    year    -
+  TL183    AU179   81      183    1.00d+31    year    -
+  TL184    AU180   81      184    1.00d+31    year    -
+  TL185    AU181   81      185    1.00d+31    year    -
+  TL186    AU182   81      186    1.00d+31    year    -
+  TL187    AU183   81      187    1.00d+31    year    -
+  PB180    HG176   82      180    4.00d+00    msec    -
+  PB181    HG177   82      181    4.50d+01    msec    -
+  PB182    HG178   82      182    5.50d+01    msec    -
+  PB183    HG179   82      183    5.35d+02    msec    -
+  PB184    HG180   82      184    5.50d-01    secs    -
+  PB185    HG181   82      185    6.30d+00    secs    -
+  PB186    HG182   82      186    4.80d+00    secs    -
+  PB187    HG183   82      187    1.00d+31    year    -
+  PB188    HG184   82      188    1.00d+31    year    -
+  PB189    HG185   82      189    1.00d+31    year    -
+  PB190    HG186   82      190    1.00d+31    year    -
+  PB191    HG187   82      191    1.00d+31    year    -
+  PB192    HG188   82      192    1.00d+31    year    -
+  PB194    HG190   82      194    1.00d+31    year    -
+  BI184    TL180   83      184    1.00d+31    year    -
+  BI185    TL181   83      185    1.00d+31    year    -
+  BI186    TL182   83      186    1.48d+01    msec    -
+  BI187    TL183   83      187    0.37d+00    msec    -
+  BI188    TL184   83      188    6.00d+01    msec    -
+  BI189    TL185   83      189    4.60d+00    msec    -
+  BI190    TL186   83      190    5.70d+00    secs    -
+  BI191    TL187   83      191    1.50d+02    msec    -
+  BI192    TL188   83      192    1.00d+31    year    -
+  BI193    TL189   83      193    3.20d+00    secs    -
+  BI194    TL190   83      194    1.00d+31    year    -
+  BI195    TL191   83      195    1.00d+31    year    -
+  BI196    TL192   83      196    1.00d+31    year    -
+  BI197    TL193   83      197    4.90d+00    mins    -
+  BI199    TL195   83      199    1.00d+31    year    -
+  BI201    TL197   83      201    1.00d+31    year    -
+  BI209    TL205   83      209    1.90d+19    year    -
+  BI210    TL206   83      210    1.00d+31    year    -
+  BI211    TL207   83      211    2.17d+00    mins    -
+  BI212    TL208   83      212    8.24d+01    mins    -
+  BI213    TL209   83      213    1.00d+31    year    -
+  BI214    TL210   83      214    1.00d+31    year    -
+  PO208    PB204   84      208    2.90d+00    year    -
+  PO209    PB205   84      209    1.02d+02    year    -
+  PO210    PB206   84      210    1.38d+02    year    -
+  PO211    PB207   84      211    5.20d-01    secs    -
+  PO212    PB208   84      212    3.00d-01    muse    -
+  PO213    PB209   84      213    4.20d-00    muse    -
+  PO214    PB210   84      214    1.64d+02    muse    -
+  PO215    PB211   84      215    1.78d-00    msec    -
+  PO216    PB212   84      216    1.50d-01    secs    -
+  PO217    PB213   84      217    1.53d-00    secs    -
+  PO218    PB214   84      218    3.05d-00    mins    -
+  AT211    BI207   85      211    7.22d-00    hour    -
+  AT212    BI208   85      212    3.14d-01    secs    -
+  AT213    BI209   85      213    1.10d-01    muse    -
+  AT214    BI210   85      214    5.60d-01    muse    -
+  AT215    BI211   85      215    1.00d-01    msec    -
+  AT216    BI212   85      216    3.22d-01    msec    -
+  AT217    BI213   85      217    3.23d+01    msec    -
+  AT218    BI214   85      218    2.00d-00    secs    -
+  AT219    BI215   85      219    9.00d-01    mins    -
+  RN212    PO208   86      212    2.40d+01    mins    -
+  RN213    PO209   86      213    1.95d+01    msec    -
+  RN214    PO210   86      214    2.70d-01    muse    -
+  RN215    PO211   86      215    2.30d+00    muse    -
+  RN216    PO212   86      216    4.50d+01    muse    -
+  RN217    PO213   86      217    5.40d-01    msec    -
+  RN218    PO214   86      218    3.50d+01    msec    -
+  RN219    PO215   86      219    3.96d+00    secs    -
+  RN220    PO216   86      220    5.56d+01    secs    -
+  RN221    PO217   86      221    1.00d+31    year    -
+  RN222    PO218   86      222    3.82d+00    days    -
+  FR213    AT209   87      213    3.46d+01    secs    -
+  FR214    AT210   87      214    5.00d+00    msec    -
+  FR215    AT211   87      215    9.00d-02    muse    -
+  FR216    AT212   87      216    7.00d-01    muse    -
+  FR217    AT213   87      217    1.60d+01    muse    -
+  FR218    AT214   87      218    1.00d+00    msec    -
+  FR219    AT215   87      219    2.10d+01    msec    -
+  FR220    AT216   87      220    2.74d+01    secs    -
+  FR221    AT217   87      221    4.90d+00    mins    -
+  RA214    RN210   88      214    2.46d+00    secs    -
+  RA215    RN211   88      215    1.67d+00    msec    -
+  RA216    RN212   88      216    1.80d-01    muse    -
+  RA217    RN213   88      217    1.60d+00    muse    -
+  RA218    RN214   88      218    2.56d+01    muse    -
+  RA219    RN215   88      219    1.00d+01    msec    -
+  RA220    RN216   88      220    2.30d+01    msec    -
+  RA221    RN217   88      221    2.80d+01    secs    -
+  RA222    RN218   88      222    3.80d+01    secs    -
+  RA223    RN219   88      223    1.14d+01    days    -
+  RA224    RN220   88      224    3.66d+00    days    -
+  RA226    RN222   88      226    1.60d+03    year    -
+  AC215    FR211   89      215    1.70d-01    secs    -
+  AC216    FR212   89      216    4.40d-01    msec    -
+  AC217    FR213   89      217    6.90d-01    muse    -
+  AC218    FR214   89      218    1.10d-00    muse    -
+  AC219    FR215   89      219    1.18d+01    muse    -
+  AC220    FR216   89      220    2.60d+01    msec    -
+  AC221    FR217   89      221    5.20d+01    msec    -
+  AC222    FR218   89      222    5.00d-00    secs    -
+  AC223    FR219   89      223    2.10d-00    mins    -
+  AC224    FR220   89      224    1.00d+31    year    -
+  AC225    FR221   89      225    1.00d+01    days    -
+  AC226    FR222   89      226    1.00d+31    year    -
+  AC227    FR223   89      227    1.00d+31    year    -
+  AC228    FR224   89      228    1.00d+31    year    -
+  TH220    RA216   90      220    9.70d+00    muse    -
+  TH221    RA217   90      221    1.68d+00    msec    -
+  TH222    RA218   90      222    2.24d+00    msec    -
+  TH223    RA219   90      223    6.60d-01    secs    -
+  TH224    RA220   90      224    1.04d-00    secs    -
+  TH225    RA221   90      225    8.72d-00    mins    -
+  TH226    RA222   90      226    3.10d+01    mins    -
+  TH227    RA223   90      227    1.87d+01    mins    -
+  TH228    RA224   90      228    1.91d-00    days    -
+  TH229    RA225   90      229    7.88d+03    year    -
+  TH230    RA226   90      230    7.54d+04    year    -
+  TH232    RA228   90      232    1.40d+10    year    -
+  PA224    AC220   91      224    9.50d-01    secs    -
+  PA225    AC221   91      225    1.80d-00    secs    -
+  PA226    AC222   91      226    1.80d-00    mins    -
+  PA227    AC223   91      227    3.83d+01    mins    -
+  PA228    AC224   91      228    1.00d+31    year    -
+  PA229    AC225   91      229    1.00d+31    year    -
+  PA230    AC226   91      230    1.00d+31    year    -
+  PA231    AC227   91      231    3.28d+04    year    -
+  U 226    TH222   92      226    2.80d-01    secs    -
+  U 227    TH223   92      227    1.10d-00    mins    -
+  U 228    TH224   92      228    9.10d-00    mins    -
+  U 229    TH225   92      229    1.00d+31    year    -
+  U 230    TH226   92      230    2.08d+01    days    -
+  U 231    TH227   92      231    1.00d+31    year    -
+  U 232    TH228   92      232    6.89d+01    year    -
+  U 233    TH229   92      233    1.59d+05    year    -
+  U 234    TH230   92      234    2.45d+05    year    -
+  U 235    TH231   92      235    7.04d+08    year    -
+  U 236    TH232   92      236    2.34d+07    year    -
+  U 238    TH234   92      238    4.47d+09    year    -
+  NP236    PA232   93      236    1.00d+31    year    -
+  NP237    PA233   93      237    2.14d+06    year    -
+  PU236    U 232   94      236    2.86d+00    year    -
+  PU237    U 233   94      237    1.00d+31    year    -
+  PU238    U 234   94      238    8.77d+01    year    -
+  PU239    U 235   94      239    2.41d+04    year    -
+  PU240    U 236   94      240    6.56d+03    year    -
+  PU241    U 237   94      241    1.00d+31    year    -
+  PU242    U 238   94      242    3.75d+05    year    -
+  PU244    U 240   94      244    8.00d+07    year    -
+  AM241    NP237   95      241    4.32d+02    year    -
+  AM242    NP238   95      242    1.00d+31    year    -
+  AM243    NP239   95      243    7.37d+03    year    -
+  CM242    PU238   96      242    1.63d+02    days    -
+  CM243    PU239   96      243    2.91d+01    year    -
+  CM244    PU240   96      244    1.81d+01    year    -
+  CM245    PU241   96      245    8.50d+03    year    -
+  CM246    PU242   96      246    4.73d+03    year    -
+  CM247    PU243   96      247    1.56d+07    year    -
+  CM248    PU244   96      248    3.40d+05    year    -
+  BK247    AM243   97      247    1.38d+03    year    -
+  CF248    CM244   98      248    3.33d+02    days    -
+  CF249    CM245   98      249    3.50d+02    year    -
+  CF250    CM246   98      250    1.13d+01    year    -
+  CF251    CM247   98      251    8.98d+02    year    -
+  CF252    CM248   98      252    2.64d+00    year    -
+#
+
+
+

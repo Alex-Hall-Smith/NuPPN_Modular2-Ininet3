@@ -1,0 +1,28 @@
+# Copy this file to Make.local and edit to suit your local
+# configuration
+
+# identifier for this local
+LOCAL = shyne
+
+#Architecture 
+ARCH = Linux_x86_64_gfortran
+
+# make sure PHYSICS and SOLVER are absolute path names, for example
+# specify the location of a full svn tree if you have one, like this:
+PPN = /shyne/swj/nugrid/mppnp.c12ago16
+
+# you don't need to change the following two but you can
+PHYSICS = $(PPN)/physics/phys08
+SOLVER = $(PPN)/solver/NFR
+UTILS = $(PPN)/utils
+
+# where is the se library?
+SEHOME = /shyne/softs/se-1.2-gfortran/
+
+# where is mpi?
+MPIHOME=/opt/mpich2/gnu/
+
+USE_SUPERLU = YES
+BLASLIB = -L/shyne/swj/softs/OpenBLAS/build/lib -Wl,-rpath=/shyne/swj/softs/OpenBLAS/build/lib -lopenblas
+
+

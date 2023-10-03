@@ -1,0 +1,50 @@
+# Copy this file (or any of the machine specific Make.local.machines
+
+# files) to Make.local and edit to suit your local configuration
+
+
+
+# identifier for this local
+
+LOCAL = macosx
+
+#Architecture 
+
+ARCH = GFORT
+
+
+# make sure PHYSICS and SOLVER are absolute path names, for example
+
+# specify the location of a full svn tree if you have one, like this:
+
+PPN = /Users/601490/Work/NuGrid/NuPPN
+
+
+
+# you don't need to change the following two but you can
+# these are master settings -- modular2 doesn't have them
+#PHYSICS = $(PPN)/physics/phys08
+#SOLVER = $(PPN)/solver/NFR
+
+PHYSICS = $(PPN)/physics
+SOLVER = $(PPN)/solver
+
+
+# where is the se library?
+
+SEHOME = /Users/601490/Work/NuGrid/se
+
+
+
+# where is mpi?
+
+#MPIHOME = /here/is/your/openmpi
+
+
+
+USE_SUPERLU = YES
+# Location based on macports install of OpenBLAS
+BLASLIB= -L/opt/local/lib/ -lopenblas
+
+
+

@@ -1,0 +1,9 @@
+&ppn_frame
+
+        nsource = 1            			! 1: read a trajectory file
+	trajectory_fn = 'trajectory.input'	! trajectory file name
+        iabuini = 11           			! how to initialize
+        ini_filename = 'iniab.dat'  		! name if iabuini=100
+        iolevel = 1            			! controls input/output
+
+/

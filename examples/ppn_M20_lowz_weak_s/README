@@ -1,0 +1,6 @@
+Make the ppn executable with make command.
+
+clean_output	clean directory for a fresh run, all relevant files from 
+	  	any previous run will be deleted
+
+The trajectories have been provided by Raphael Hirschi

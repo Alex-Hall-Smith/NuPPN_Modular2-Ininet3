@@ -1,0 +1,20 @@
+&ppn_frame
+
+        t9        = 0.055d0     ! constant temperature
+        rho       = 1.0d2       ! /cgs
+        dt        = 1.0d-3      ! initial time step
+        t_max     = 1.47431d4   ! max age of evolution
+        dt_max    = 5.0d3       ! max number dzeitj can be
+        dt_factor = 1.5         ! time step factor until dt = dt_max
+        nsource   = 1
+        iabuini    = 11	! how to initialize
+        trajectory_fn     = 'f10r1.5a5md1e-2.dat'      ! trajectory file name
+        ini_filename      = 'iniab.dat'
+        iolevel   = 1           ! controls input/output
+        iplot_flux_option = 1
+        i_flux_integrated = 0
+	print_cycles = 10
+	terminal_cycles = 1
+
+/
+

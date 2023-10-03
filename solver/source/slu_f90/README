@@ -1,0 +1,24 @@
+# README solver/NFR/CODE/slu_f90
+---
+
+## About
+
+This directory contains a Fortran 90 interface to the superLU sparse matrix
+solver, which is written in C. The Fortran interface provided by superLU do not
+support sparse matrices in compressed row format, which is what the Intel MKL
+Direct Sparse Solver routines need. Rather than write the sparse matrix in
+different formats inside PPN/solver, Philipp Edelmann wrote this nice interface
+to superLU so that we can pass it *either* a row-compressed (irow=1) *or* a
+column compressed (irow=0) sparse matrix. Thanks, Philipp! Be aware, however,
+that the superLU routines eventually will convert the compressed row matrix
+back into a compressed column matrix again before the solve, which sucks a
+little bit.
+
+## Files in this directory
+
+Makefile        : used to compile the F90 interface with 'make'
+matrixtest.f90  : a test program
+README          : this file
+slu.f90         : Fortran90 interface to slu_f90.c
+slu_f90.c       : C bindings to superLU routines to invert the sparse matrix
+

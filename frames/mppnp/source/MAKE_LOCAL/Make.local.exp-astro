@@ -1,0 +1,35 @@
+# Copy this file to Make.local and edit to suit your local
+# configuration
+
+# identifier for this local
+LOCAL = exp-astro
+
+#Architecture 
+ARCH =  Linux_x86_64_ifort
+
+# make sure PHYSICS and SOLVER are absolute path names, for example
+# specify the location of a full svn tree if you have one, like this:
+PPN = /home/alex/mppnp_package_25may
+
+# you don't need to change the following two but you can
+PHYSICS = $(PPN)/physics/phys08
+SOLVER = $(PPN)/solver/NFR
+
+# where is mpi?
+MPIHOME = /home/alex/opt/openmpi-1.5.3
+
+# where is the se library?
+SEHOME = /home/alex/opt/se-intel
+
+
+# the MKL libraries should be selected via the environment setting
+#  scripts that are loaded from the .bashrc (see the latex
+#  documentation for the solver)
+
+# mkl_solver_lp64 is needed for the sparse solver
+# mkl_lapack is needed for the general lapack solver (mat_solv_option)
+#LAPACK_LIBS = -lmkl_lapack95_lp64 -lmkl_intel_lp64 -lmkl_intel_thread -lmkl_core -liomp5
+#intel 12 64 bit:
+#LD_PATH_LAPACK=/packages/intel/mkl/10.0.2.018/lib/em64t
+#LAPACK_LIBS = -lmkl_lapack -lmkl_solver_lp64 -lmkl_intel_lp64 -lmkl_intel_thread -lmkl_core -liomp5
+LAPACK_LIBS =-lmkl_intel_lp64 -lmkl_intel_thread -lmkl_lapack95_lp64 -lmkl_core -liomp5 -lpthread

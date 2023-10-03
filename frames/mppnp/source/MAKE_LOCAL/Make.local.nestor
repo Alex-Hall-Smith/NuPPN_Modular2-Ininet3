@@ -1,0 +1,37 @@
+# Copy this file to Make.local and edit to suit your local
+# configuration
+# note: add  -L/opt/lib to  LDFLAGS  in Makefile. There is a problem in linking lorque library for nestor otherwise.
+
+# identifier for this local
+LOCAL = nestor
+
+#Architecture 
+ARCH = Linux_x86_64_ifort_defaultMPI
+
+# make sure PHYSICS and SOLVER are absolute path names, for example
+# specify the location of a full svn tree if you have one, like this:
+PPN = /global/scratch/marcop/mppnp_package_25june
+
+# you don't need to change the following two but you can
+PHYSICS = $(PPN)/physics/phys08
+#SOLVER = $(PPN)/solver/NFR
+SOLVER = $(PPN)/solver/NFR
+
+# where is the se library?
+SEHOME = /home/marcop/opt/se-intel
+
+# where is mpi?
+#MPIHOME = /global/software/openmpi-1.4.2/bin/
+MPIHOME = /home/marcop/opt/openmpi-1.4.2/bin/
+#MPIHOME = /global/software/intel/impi/3.2.2.006/bin/
+#MPIHOME =
+
+# the MKL libraries should be selected via the environment setting
+#  scripts that are loaded from the .bashrc (see the latex
+#  documentation for the solver)
+
+# mkl_solver_lp64 is needed for the sparse solver
+# mkl_lapack is needed for the general lapack solver (mat_solv_option)
+LD_PATH_LAPACK=/global/software/intel/mkl/10.2.2.025/lib/em64t
+LAPACK_LIBS = -lmkl_lapack -lmkl_solver_lp64 -lmkl_intel_lp64 -lmkl_intel_thread -lmkl_core -liomp5
+

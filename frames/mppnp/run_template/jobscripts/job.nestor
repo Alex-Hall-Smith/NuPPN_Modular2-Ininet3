@@ -1,0 +1,14 @@
+#!/bin/bash 
+#PBS -N M15_KEP_SE
+#PBS -l procs=128,mem=128gb,walltime=48:00:00
+#PBS -j oe
+
+cd $PBS_O_WORKDIR
+
+EXE=/global/scratch/swj/mppnp_package_20120814/mppnp/CODE/mppnp_EXP.exe
+
+MPIEXEC=/global/software/openmpi-1.4.2/bin/mpiexec
+export OMP_NUM_THREADS=1
+$MPIEXEC  $EXE
+
+

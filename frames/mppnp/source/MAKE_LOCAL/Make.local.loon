@@ -1,0 +1,23 @@
+# Copy this file to Make.local and edit to suit your local
+# configuration
+
+# identifier for this local
+LOCAL = loon
+
+#Architecture 
+ARCH =  Linux_x86_64_ifort
+
+# make sure PHYSICS and SOLVER are absolute path names, for example
+# specify the location of a full svn tree if you have one, like this:
+PPN =  /rpod2/fherwig/tmp
+
+# you don't need to change the following two but you can
+PHYSICS = $(PPN)/physics/phys08
+SOLVER = $(PPN)/solver/NFR
+
+# where is the se library?
+SEHOME = /rpod2/opt/se-1.2
+
+# where is mpi?
+MPIHOME = /rpod2/opt/openmpi-1.3.4
+

@@ -1,0 +1,35 @@
+# Copy this file to Make.local and edit to suit your local
+# configuration
+
+ARCH = GFORT
+
+# make sure PHYSICS and SOLVER are absolute path names, like this:
+
+PPN = /shared/storage/physnp/ahs539/Nugrid/nuppn-modular2_ininet3
+
+PHYSICS = $(PPN)/physics/phys08
+SOLVER = $(PPN)/solver/NFR
+
+# the MKL libraries should be selected via the environment setting
+#  scripts that are loaded from the .bashrc (see the latex
+#  documentation for the solver) if you want to use MKL solvers
+#  (significantly faster solver for larger networks) then LAPACK_LIBS
+#  needs to be defined; defining LAPACK_LIBS makes available
+#  mat_solv_option = 3 in ppn_solver
+
+# ACML
+#LD_PATH_LAPACK = /opt/acml4.4.0/gfortran64/lib
+#LAPACK_LIBS = -lacml -lacml_mv
+
+# do you want to use superLU (open source sparse matrix library)?
+# BLASLIB should be the same as in /home/swj/softs/SuperLU_5.0/make.inc
+# when superLU was built (BLASLIB should probably be the same as
+# the LAPACK_LIBS variable)
+USE_SUPERLU = YES
+BLASLIB = -lopenblas
+
+# BLASLIB = -L/$(PPN)/utils/lib -lopenblas
+# BLASLIB = -L/opt/acml4.4.0/gfortran64/lib -lacml -lacml_mv
+# BLASLIB = -lmkl_lapack95_lp64 -lmkl_intel_lp64 -lmkl_intel_thread -lmkl_core -liomp5
+# BLASLIB = -L/usr/lib/libblas -lblas
+

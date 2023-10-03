@@ -1,0 +1,35 @@
+# Copy this file to Make.local and edit to suit your local
+# configuration
+
+#Architecture 
+ARCH =  INTEL
+
+# make sure PHYSICS and SOLVER are absolute path names, like this:
+PPN = /shyne/swj/nugrid/ppn-testing-20151116
+
+# you don't need to change the following two but you can
+PHYSICS = $(PPN)/physics/phys08
+SOLVER = $(PPN)/solver/NFR
+
+# the MKL libraries should be selected via the environment setting
+#  scripts that are loaded from the .bashrc (see the latex
+#  documentation for the solver)
+
+# mkl_solver_lp64 is needed for the sparse solver
+# mkl_lapack is needed for the general lapack solver (mat_solv_option)
+#LAPACK_LIBS = -lmkl_lapack95_lp64 -lmkl_intel_lp64 -lmkl_intel_thread -lmkl_core -liomp5
+#intel 12 64 bit:
+#LAPACK_LIBS =-lmkl_intel_lp64 -lmkl_sequential -lmkl_lapack95_lp64 -lmkl_core -liomp5 
+
+# if I want to use ACML uncomment here below:
+# LD_PATH_LAPACK = /opt/acml4.4.0/gfortran64/lib
+# LAPACK_LIBS = -lacml -lacml_mv
+
+# do you want to use superLU (open source sparse matrix library)?
+# BLASLIB should be the path to the openblas libraries (usually /usr/lib/libblas)
+USE_SUPERLU = YES
+# BLASLIB = -L/usr/lib -lopenblas
+# BLASLIB = -L/$(PPN)/lib -lopenblas
+#BLASLIB = -L/shyne/softs/acml4.4.0/ifort64/lib -lacml -lacml_mv
+ BLASLIB = -lmkl_lapack95_lp64 -lmkl_intel_lp64 -lmkl_intel_thread -lmkl_core -liomp5
+# BLASLIB = -L/usr/lib/libblas -lblas

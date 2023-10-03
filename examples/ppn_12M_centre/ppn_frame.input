@@ -1,0 +1,9 @@
+&ppn_frame
+
+	dt_factor = 1.3
+        nsource = 1
+        iabuini = 12
+        ini_filename = 'iniab.dat'
+        iolevel = 1
+
+/

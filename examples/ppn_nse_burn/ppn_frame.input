@@ -1,0 +1,14 @@
+&ppn_frame
+
+        t9         = 9.d0
+	rho        = 1.d9
+	dt         = 1.d-12
+	t_max      = 4.d-4
+	dt_factor  = 1.05
+	nsource    = 0
+	iabuini    = 4
+	ye_initial = 0.5d0
+        iolevel    = 1
+	print_cycles = 1
+/
+

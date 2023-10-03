@@ -1,0 +1,16 @@
+! this file is for setting control parameters for running ppn
+
+&ppn_frame
+
+	t9           = 0.055d0     ! constant temperature
+	rho          = 1.0d2       ! g/cm^3
+
+	dt           = 1.0d-3      ! initial time step                ( years?)
+	t_max        = 1.47431d+04 ! max age of evolution             ( years)
+	dt_max       = 5.0d+3      ! max time step                    ( years)
+	dt_factor    = 1.5         ! time step factor until dt = dt_max
+	iabuini      = 1           ! how to initialize
+	ini_filename = 'p20.dat'   ! name if iabuini = 100
+	iolevel      = 1           ! controls input/output
+	/
+

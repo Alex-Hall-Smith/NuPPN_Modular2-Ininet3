@@ -1,0 +1,7 @@
+&ppn_frame
+
+        nsource = 1            ! 0: hydrostatic; 1: trajectory
+	trajectory_fn = 'trajectory.input'
+        iabuini = 1            ! how to initialize
+        iolevel = 1            ! controls input/output
+/

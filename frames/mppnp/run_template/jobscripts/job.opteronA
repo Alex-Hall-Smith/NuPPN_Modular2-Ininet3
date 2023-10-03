@@ -1,0 +1,11 @@
+#!/bin/csh
+
+#$ -M mbeard@nd.edu
+#$ -m abe
+#$ -pe ompi-4 4
+#$ -q long
+#$ -N mbtest
+#PBS -l walltime=00:10:00
+
+module load ompi/1.3.2-intel
+mpiexec ../CODE/mppnp.exe

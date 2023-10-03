@@ -1,0 +1,45 @@
+1 - I have copied missing isotopes in this file from JINA file v2.0
+
+2 - I have added in the network but missing in the file from JINA v2.0
+(probably because frdm cannot be applied anymore?!):
+
++ copying and modifying Rn269 for mass, spin, etc 
+-- Rn270,Rn271,Rn272, ...., Rn289
+
++ copying and modifying Fr269 and Fr270 for mass, spin, etc 
+-- Fr271...Fr277; Fr281...Fr289
+
++ copying and modifying Ra270 and Ra271 for mass, spin, etc 
+-- Ra272...Ra277
++ modyfing Ra282,Ra283
+-- Ra284...Ra292 
+
++ copying and modifying Th273 and Th274 for mass, spin, etc 
+-- Th275..Th278
++ copying and modifying Th287 and Th288 for mass, spin, etc 
+-- Th289..Th291
++ copying and modifying Th292 and Th293 for mass, spin, etc 
+-- Th294..Th299
+
+
++ copying and modifying U294 and U295 for mass, spin, etc 
+-- U296..U305
+
++ copying and modifying Np301 and Np302 for mass, spin, etc 
+-- Np303..Np308
+
++ copying and modifying Pu302 and Pu303 for mass, spin, etc 
+-- Pu304..Pu312
+
++ copying and modifying am308 and am309 for mass, spin, etc 
+-- am310..am315
+
++ copying and modifying cm311 and cm312 for mass, spin, etc 
+-- cm313..cm318
+
++ copying and modifying bk314 and bk315 for mass, spin, etc 
+-- bk316..bk321
+
++ copying and modifying cf318 and cf319 for mass, spin, etc 
+-- cf320..cf325
+

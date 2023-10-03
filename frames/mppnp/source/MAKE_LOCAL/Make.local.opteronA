@@ -1,0 +1,30 @@
+# Copy this file to Make.local and edit to suit your local
+# configuration
+
+# identifier for this local
+LOCAL = opteronA.crc.nd.edu
+
+#Architecture 
+ARCH = Linux_x86_64_ifort_defaultMPI
+
+# make sure PHYSICS and SOLVER are absolute path names, for example
+# specify the location of a full svn tree if you have one, like this:
+PPN = /pscratch/mpignata/mppnp_package_26jan_11
+
+# you don't need to change the following two but you can
+PHYSICS = $(PPN)/physics/phys08
+SOLVER = $(PPN)/solver/NFR
+
+# where is the se library?
+SEHOME = /afs/crc.nd.edu/user/m/mpignata/opt/se-intel
+#
+# here I specify LAPACK paths, depending if I am using MKL or ACML.
+# if I want to use MKL uncomment here below:
+#
+#LD_PATH_LAPACK=/afs/crc.nd.edu/x86_64_linux/scilib/mkl/10.1.0.015/lib/em64t
+#LAPACK_LIBS = -lmkl_lapack -lmkl_solver_lp64 -lmkl_intel_lp64 -lmkl_intel_thread -lmkl_core -liomp5 -lpthread
+#
+# if I want to use ACML uncomment here below:
+LD_PATH_LAPACK=/afs/crc.nd.edu/user/m/mpignata/opt/acml4.4.0/ifort64/lib
+LAPACK_LIBS =  -lacml -lacml_mv
+

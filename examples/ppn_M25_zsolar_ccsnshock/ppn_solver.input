@@ -1,0 +1,15 @@
+&ppn_solver
+
+      mat_solv_option = 5    ! 1: numerical recipies (slow)
+                             ! 2: leqs from Frank (slowest)
+                             ! 3: LAPACK/ACML MKL (fast; requires MKL or ACML)
+                             ! 4: Intel MKL direct sparse solver (faster; requires MKL)
+                             ! 5: SuperLU direct sparse solver (fastest & open source)
+      
+      integration_method = 1 ! 0: backward euler
+                             ! 1: bader-deuflhard
+
+      nse_weak_method = 1    ! 0: forward euler
+                             ! 1: cash-karp rk4
+
+/

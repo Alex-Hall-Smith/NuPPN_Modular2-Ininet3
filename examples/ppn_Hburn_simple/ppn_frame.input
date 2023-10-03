@@ -1,0 +1,14 @@
+&ppn_frame
+
+        t9 = 0.055d0           ! constant temperature
+        rho = 1.0d2            ! g/cm^3
+
+        dt = 1.0d-3            ! initial time step
+        t_max = 1.0e+04        ! max age of evolution
+        dt_max = 2.0d+3        ! max timestep / years
+
+        iabuini = 11           ! how to initialize
+        ini_filename = "../../frames/mppnp/USEEPP/iniab1.4E-02As09.ppn"
+	iolevel = 1            ! controls input/output
+
+/

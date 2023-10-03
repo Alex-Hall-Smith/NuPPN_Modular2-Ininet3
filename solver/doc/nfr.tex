@@ -1,0 +1,237 @@
+% *********** Document name and reference:
+% Title of document
+\renewcommand{\ndoctitle}{NFR: Fully implicit Newton-Raphson solver} 
+% Document category acronym 
+\renewcommand{\ndocname}{nfr}                      
+% svn dir
+\renewcommand{\svndir}{svn://forum.astro.keele.ac.uk/frames/solver/NFR/DOC}  
+% Contributors to this document
+\renewcommand{\ndoccontribs}{FH}
+
+\input{chap}
+
+Document name: \ndocname \\
+SVN directory:\svndir\\
+%Contributors: \ndoccontribs\\
+
+{ \textbf{Abstract:} \slshape NFR is a fully implicit Newton-Raphson
+  solver with automatic sub-time steps. It has the built-in dynamic
+  network capability that selects the right size opf the network as it
+  is converging. Several linear algebra options are implemented.}
+
+%\maketitle
+
+%\section{Introduction and context}
+
+%Here comes standard latex as you know it .... for example a reference to \citet{herwig:99a}. The bibtex references are kept in ngastro.bib in 
+
+%Note that you can mark 
+%\index{items} 
+%that should go into the index.
+
+\section{Input and run configuration}
+\index{ppn\_solver.input} Initialisation of the NFR solver is governed by
+the following parameter in \texttt{ppn\_solver.input}:
+\begin{itemize}
+\item \index{ittd} \texttt{ittd:} the maximum number of iterations before giving up and requesting a sub-time step. 
+\item \index{dgrd} \texttt{dgrd:} convergence limit for largest relative correction
+\item \index{grdthreshold} \texttt{grdthreshold:} threshold for applying dgrd test
+\item \index{irdn} \texttt{irdn:} switch for dynamic network inside solver: \\
+\begin{tabularx}{0.9\textwidth}{lX}
+  1 & rdn for testing stuff \\
+  2 & rdn supported and tested \\
+  3 & rdn when starting with only 1-2 species different than zero. \\
+\end{tabularx}
+\item \index{cyminthreshold} \texttt{cyminthreshold:} this is what the solver considers to be zero, there is some issue concerning this parameter that is documented in the code (r775)
+\item \index{mat\_solv\_option} \texttt{mat\_solv\_option:} select linear algebra solver for matrix inversion:
+\\
+\begin{tabularx}{0.9\textwidth}{lX}
+  1 & Numerical Recipies ludcmp and lubksb \\
+  2 & leqs \\
+  3 & Intel-MKL/ACML dgesv (double precision general solver)  \\
+  4 & sparse matrix solver from intel \\
+  5 & sparse matrix solver using superLU (free) \\ 
+\end{tabularx}
+\end{itemize}
+
+\section{Using MKL solvers}
+Using the Intel MKL solvers provides substantial performance
+enhancement. Even using the standard LAPACK solver from the MKL
+libraries saves about a factor of almost 10 compared to the Numerical
+Recipies solver or the leqs solver for large matrices. 
+
+Below is a performance example:\\
+The problem consists of evolving an initial solar abundance with a
+full network for 100yrs at T9=0.5, rho=1000. PPN is using the RDN and
+so network size is variable, but typcially above 900 for most cases.
+(Note, that this test is not set up to show the fastest way of PPN to
+do this calculation, it is just meant to demonstrate the different
+behaviour for these solvers in a differential manner).
+\begin{verbatim}
+solver          threads         run time
+------------------------------------------
+Num Rec         1               15m14.074s
+LEQS            1               42m52.179s
+MKL LAPACK      1               1m58.738s
+MKL LAPACK      2               1m41.131s
+MKL LAPACK      8               1m24.900s
+\end{verbatim}
+
+
+
+In order to use the the MKL library it is recommended to use the
+scripts of the MKL distribution for the correct hardware platform that
+set the environment variables (just as you do for the intel fortran
+compiler). For the UVic 64bit linux boxes this would be
+\begin{verbatim}
+source  /opt/intel/Compiler/11.1/Current/mkl/tools/environment/mklvarsem64t.sh
+\end{verbatim}
+in the \texttt{.bashrc} file.
+
+On Falk's Intel Mac with 32bit intel 10 compiler this would be:
+\begin{verbatim}
+source /Library/Frameworks/Intel_MKL.framework/Versions/10.0.1.014/tools/e\
+nvironment/mklvars32.sh
+\end{verbatim}
+
+Depending on the threading model the MKL solvers employ threading
+techniques to enhance performance. These are, for example, OpenMP
+instructions. In order to tell the MKL library how many cores are
+available the code looks first at the environment variable
+
+\begin{verbatim}
+export OMP_NUM_THREADS=2
+\end{verbatim}
+then at 
+\begin{verbatim}
+export MKL_NUM_THREADS=2
+\end{verbatim}
+These have to be set in the \texttt{.bashrc} file.
+There are also run time options to change the threading level.
+
+Then, it is just a matter to uncomment the desired lines in the Make.local file and things should be working.
+
+\section{Using ACML solvers}
+
+For machines with AMD processors ACML libraries provide a better performance than MKL solvers, even using intel-fortran. ACML can be downloaded and it is free.
+Please check frames/mppnp/CODE/Make.local.monster for an example on how to call ACML libraries instead of MKL libraries. 
+
+
+
+
+\section{The use of CYMINFORMAL (or cyminthreshold), and how to use the static network}
+
+CYMINFORMAL is the main parameter regulating the rdn, telling what flux (cyminformal $\sim$ flux$\times$dt) 
+should be used and what not. Notice that the network is smart, and can handle also cases where at the first
+iterations x$\_i$ = 0.d0, and its destruction fluxes are zero.
+CYMINFORMAL can be changed, but you should keep in mind what problem you are solving. Ask yourself what is the 
+smallest abundance that you want to resolve, and check the size of dt. Do few tests.
+The default value (1d-30) is safe for whatever conditions we have tested. For sure you may use higher values.    
+
+By setting CYMINFORMAL $\leq$ 0.d0, the rdn is automatically converted to the static network.
+It is obvious if you think. Once, the static network was places for irdn=0. However, RH and FH 
+did not like the zero option as indicative of something, so now this is not the case anymore.
+The static network is hide in the rdn, which turn to be static once no selection is done with 
+CYMINFORMAL. 
+
+
+
+
+Here below it is reported a brief discussion, that explain how to use CYMINFORMAL.
+
+FH:\\
+I don’t know since when this does not work anymore, but I known that I did plots of NVAR, the number of species, as a function of radius for an AGB star model and it would select <70 species for the H-burn shell. Now, for a simple H burn at 55MK on solar abundance distribution it selects $\gtrsim$ 600. 
+
+MP:\\
+I have checked and it is fine to have that large number of species, given CYMINFORMAL = 1.d-30 in ppn\_solver.input.
+CYMINFORMAL is basically the minimum flux*dzeit considered to build the dynamic network.
+At 55MK, for instance the C13an flux at the first step is\\
+
+ C  13HE  4NEUT = 5.744E-24
+
+which is right if you consider that the rate is ~ 9e-20. This trigger neutron captures, e.g,\\
+
+BE  7NEUT PROT = 1.994E-26\\
+FE 56NEUT OOOOO= 1.377E-27\\
+...\\
+
+Notice that even by setting to zero the C13(a,n), the number of species will not decrease much, since there will be small fluxes (but $\geq$ 1.d-30) of proton captures. E.g.,\\
+
+CA 44PROT OOOOO= 7.838E-26\\
+...\\
+K  40PROT NEUT = 7.363E-28\\
+
+So, if for instance you set in the last stable ppn revision CYMINFORMAL=1.d-15, you will see that nvar1 $\sim$ 50.
+The results are basically the same in this case, if you use cyminformal=1.e-15 or 1.e-30.
+Differences beyond grdthreshold are e.g\\
+
+<    22     9.  19.   1   1.90708E-10  F  19\\
+---\\
+>    22     9.  19.   1   1.90690E-10  F  19\\
+
+The default CYMINFORMAL is extremely conservative, and it can be safely used whatever nucleosynthesis scenario is simulated, and whatever realistic timesteps adopted (also with fraction of a second).
+On the other hand, CYMINFORMAL could/should be optimized depending on the simulations, in particular before extensive simulations like for future CCSN and SNIa runs. 
+
+In general, it makes not much sense to use cyminformal < grdthreshold. 
+Nevertheless, I have tested this in few cases and it is not so bad. 
+At this point, grdhtreshold is not anymore reliable, better assume cyminformal as new grdthreshold.
+Since the code does not break and produce results ok, for now I will not force to be cyminformal > grdthreshold.
+However, I would not recommend to do that.
+
+
+
+
+% \fig{fig:HRD1} shows that for similar overshoot ...
+
+
+% --------------------------- end matter ------------------------
+\vfill
+\section{Document administration}
+
+\subsection{History} 
+This document history complements the svn log.
+
+\begin{tabular*}{\textwidth}{lll}
+\hline
+Authors & yymmdd & Comment \\
+\hline
+FH & 090708 & set-up this document \\
+\hline
+\end{tabular*}
+
+\subsection{TODO \& open issues} 
+\begin{tabular*}{\textwidth}{lll}
+\hline
+Requester & yymmdd & Item \\
+\hline
+xx & 090909 & this needs to be added \\
+\hline
+\end{tabular*}
+
+
+% --------------- latex template below ---------------------------
+
+
+
+%\begin{figure}[htbp]
+%   \centering
+%%   \includegraphics[width=\textwidth]{layers.jpg} % 
+%      \caption{}   \includegraphics[width=0.48\textwidth]{FIGURES/HRD90ms.png}  
+%   \includegraphics[width=0.48\textwidth]{FIGURES/HRD150ms.png}  
+%
+%   \label{fig:one}
+%\end{figure}
+%
+%\begin{equation}
+%Y_a = Y_k + \sum_{i \neq k} Y_i
+%\end{equation}
+%
+%{
+%%\color{ForestGreen}
+%\sffamily 
+%  {\center  --------------- \hfill {\bf START: Some special text} \hfill ---------------}\\
+%$Y_c$ does not contain ZZZ but we may assign one $Y_n$ to XYZ which is the decay product of the unstable nitrogen isotope JJHJ. %
+%
+%{\center ---------------  \hfill {\bf END:Some special text} \hfill ---------------}\\
+%}
+

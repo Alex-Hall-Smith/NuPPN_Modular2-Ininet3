@@ -1,0 +1,16 @@
+# the run_me.sh run script assumes that you are running on a
+# cluster with a bunch of possibly inhomogeneous nodes; these
+# could be the workstations of your co-workers! on each of these
+# nodes there is a maximum number of cores you may wish to use
+# (to ensure that your colleages have one or two cores left
+# to read their email). This max number of slot can be specified by
+# max_slots: the max number of slots you want to use on that host.
+# the --bynode option in the mpiexec launch command takes care
+# of the roun-robin by node allocation that is prefered for the
+# mppnp code 
+
+# total: 48
+gerbil max_slots=1
+lascar max_slots=12 
+tupungato max_slots=12
+helix max_slots=16

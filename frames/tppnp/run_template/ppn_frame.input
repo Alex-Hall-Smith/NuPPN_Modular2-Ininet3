@@ -1,0 +1,10 @@
+&ppn_frame
+    	iolevel     = 1     ! how much output do you want, >4 is for debugging
+
+    	t9threshold = 0.008
+    	ythreshold  = 1.d-99
+    	iabuini     = 101
+
+    	datdir      = './input_data'
+/
+

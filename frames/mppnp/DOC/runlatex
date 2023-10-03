@@ -1,0 +1,6 @@
+pdflatex mppnp-chapter
+pdflatex mppnp-chapter
+makeindex mppnp-chapter
+bibtex mppnp-chapter
+pdflatex mppnp-chapter
+pdflatex mppnp-chapter

@@ -1,0 +1,152 @@
+Excercise I
+
+- Open parameter.input file, put NNN=0
+In this way, just the isotopes and the reactions listed in parameter.input will
+be used for the calculations. The rection rates will be taken from the 
+subroutine called vital.
+The first 4 lines in parameter.input looks like
+
+#  DZEITJ   TMAXJ   ITTD  DGRD	GRDTHRESHOLD	T9	RHO/[cgs] DZEITJMAX/yr IVIT INCR
+    1.E0    5.e1    6     1.D-3 1.E-12          0.12    1.E2      1.E2         1     1 
+C NVCP NRCP NNN
+   36   65   0
+
+-Open ppn.f, search for "yps(j,ispe('C  13'))".
+Use this place to change initial abundance. Set as following the abundance for
+He4, C12, C13 and put to zero the abundance of the other isotopes:
+
+	yps=0.d0
+	yps(j,ispe('HE  4'))=0.58882999999999996d0
+	yps(j,ispe('C  12'))=0.4d0
+	yps(j,ispe('C  13'))=0.01d0
+
+- Save and compile ppn.f.
+When you run the code, you obtain already a lot of useful informations, like
+isotopes included and reactions as well (both are .true. if they are considered, 
+.false. if not).
+Read them carefully for all the next excercises.
+
+
+- useful output files:
+
+i) debugnetwork.txt: informations for network debug
+I recommend to enter in the code now and look why this informations are printed.
+e.g.
+
+    NUMBER of considered isotopes and reactions:           34  and           49
+ selected            0  isotopes and            0  reactions from 
+  networkI subroutine           0          65
+
+It means that 34 isotopes and 49 reactions are selected, but 0 isotopes and 0
+reactions from subroutine networkI (we set NNN=0) 
+
+ii) selem.dat: initial isotopic abundances and abundances evolution, with other
+informations like neutron density, alpha density and proton density, for
+different evolution time steps.
+
+iii) x-time.dat: at different times (column 1) log_10(C13) is given (column 3).
+You can enter in the code and modify the printing set up in you want to print 
+other isotopes.
+
+ 
+
+Excercise II
+
+-Open ppn.f, search for "yps(j,ispe('C  13'))".
+Set the initial abundances to
+
+	yps=0.d0
+	yps(j,ispe('HE  4'))=0.58882999999999996d0
+	yps(j,ispe('C  12'))=0.4d0
+	yps(j,ispe('C  13'))=0.01d0
+	yps(j,ispe('FE 56'))=1.17d-3
+
+- Save, compile and run ppn.f.
+
+When you run the code, you obtain also the following message
+
+ WARNING: ISPE: NAME FE 56could not be found in ZIS
+  WARNING in checknw: at input  has abundance   1.170000000000000E-003 
+  in at least one mass shell but it is defined F .  will be set to zero
+  and the abundance distribution will be normalized
+
+So, with respect to excercise 1 you will not obtain differences.
+The reason is that Fe56 is not included in the network listed in
+parameter.input.
+You must enlarge the network, to include also Fe56.
+
+
+Excercise III
+
+- Open parameter.input file, put NNN=500
+In this way, you add 500 isotopes and relative reactions from subroutine 
+networkI. This does not mean that the final number of isotope must be 500! 
+If in parameter.input there are isotopes not present in the networkI libraries
+and they are set to .true., they will be added.
+
+- Run ppn.f.
+  
+Neutron captures and beta decys are working for heavy isotopes, including new
+500 isotopes from networkI!
+Check in selem.dat the evolution of the abundances.
+
+Excercise IV
+
+- Open parameter.input file, put NNN=1080 (up to Bi isotopes).
+Set TMAXJ to 5.e2. TMAXJ is the number of years that the code will calculate the
+nucleosynthesis.
+
+- Run ppn.f. 
+
+Neutron captures and beta decys are working for heavy isotopes, including new
+500 isotopes from networkI!
+Check in selem.dat the evolution of the abundances.
+Redo the same exercise using different TMAXJ. You will see that according to the
+amount of burned C13 (and of the total neutron exposure) the heavy isotopes 
+distribution will change.
+
+Excercise V
+
+Now, in parameter.input put the temperature T9 to 0.30.
+
+The first 4 lines in parameter.input looks like
+#  DZEITJ   TMAXJ   ITTD  DGRD	GRDTHRESHOLD	T9	RHO/[cgs] DZEITJMAX/yr IVIT INCR
+    1.E0    5.e0    6     1.D-3 1.E-12          0.30    1.E2      1.E2         1     0 
+C NVCP NRCP NNN
+   36   65   1080
+
+Run ppn.f.
+
+You will obtain
+
+stop: no convergence
+
+The code does not converge in 6 iteractions (ITTD 6, given in parameter.input).
+The nucleosynthesis flows are too strong, and the time step (DZEITJ 1.E0) of 1
+yr is too high.
+
+
+
+Excercise VI
+
+Now, in parameter.input put the time step DZEITJ = 1.E-5 and the maximum numper
+of time steps per year DZEITJMAX/yr = 1.E5.
+
+The first 4 lines in parameter.input looks like
+#  DZEITJ   TMAXJ   ITTD  DGRD	GRDTHRESHOLD	T9	RHO/[cgs] DZEITJMAX/yr IVIT INCR
+    1.E-5    5.e0    6     1.D-3 1.E-12          0.30    1.E2      1.E5         1     0 
+C NVCP NRCP NNN
+   36   65   1080
+
+Run ppn.f.
+
+
+Now, you find a solution.
+DZEITJ = 1.E-5 means a time step of about 5 hours.
+If you open the file selem.dat and you check the neutron density, 
+it is 1.67E+015 n*cm^-3!
+
+I recommend to play with DZEITJ, and check if reducing or increasing a little
+bit the time step, the solution changes.
+
+

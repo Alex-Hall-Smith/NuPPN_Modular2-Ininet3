@@ -1,0 +1,4 @@
+rm -f *DAT
+rm -f x-time.dat
+rm -f selem.dat
+rm -f *png

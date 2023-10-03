@@ -1,0 +1,42 @@
+! this file is for setting control parameters for HIF in mppnp
+
+! for detailed documentaion see ../DOC/mppnp-chapter.pdf and of course the code
+
+&ppn_hif
+
+	ing = 1	! initialisation
+	ingperiod = 6
+	xingest = 5.d-4
+        !Pavel? dmxtop = 4.d-4  ! xingest H mass fraction is ingested into the top dmxtop mass at every ingperiod cycle
+
+/
+
+! *** end of namelist
+
+   ! the parameter values are given as fortran95 "namelists"
+   ! here's a brief summary of how things work with namelists.
+
+   ! each line in a namelist is of the form   name = value ! comment
+
+   ! each name must be declared as a control in the program,
+   ! but you don't need to include all of the controls in the list.
+   ! and the order of the list doesn't matter.
+   ! blank lines and comment lines can be freely included in the list.
+   ! blanks at the start of a line containing a name-value pair are okay too.
+
+   ! all of the controls are given reasonable default values at initialization.
+   ! so you only need to set the ones that you actually want to change
+
+   ! if you don't want to change a control, but you do want to keep in the list,
+   ! either comment out the line, or leave the value field blank.
+
+   ! fortran supports structured values in namelists (arrays and derived types),
+   ! but for simplicity, we only use basic types (integers, doubles, logicals, strings).
+
+   ! values are given using the usual fortran syntax.
+   ! for example, character string values are enclosed in quotes
+
+   ! ****** REMINDER ******
+   ! A '/' character terminates the namelist.
+   ! So, do not use '/' outside of comments or strings.
+   ! In particular, don't write something like 1d0/3d0 as a value.

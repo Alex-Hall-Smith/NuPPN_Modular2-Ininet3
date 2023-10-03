@@ -1,0 +1,13 @@
+See the README file in this directory for information on Makefile
+configuration and instruction on compiling. This file contains a list
+of machine specific Makefiles and where they can be used.
+
+Make.local.helix: On 64 bit machines in Victoria, including helix,
+		  degu etc
+
+Make.local.vortex:	Falk's Intel MacBook Pro
+
+Make.local.KHAOS: The KHAOS cluster at Keele University.
+
+Make.local.glacier:	http://westgrid.ca/support/quickstart/glacier
+

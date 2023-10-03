@@ -1,0 +1,9 @@
+# ISOMER OR NOT?   HOW MANY?
+ 1                 5 
+# ZIS   ZISI   Z     A    GROUND   []     ISOM1    []     IRT9    IR       BRN       BRA       BRP  
+ AL 26 AL*26   13   26   7.160d+05 YRS   6.350d+00 SEC  0.50d+0  0.50d+0  1.00d+0  1.00d+0  1.00d+0
+ KR 85 KR*85   36   85   1.076d+01 YRS   1.613d+04 SEC  0.50d+0  0.42d+0  1.00d+0  1.00d+0  1.00d+0
+ CD115 CD*15   48  115   4.480d+01 DAY   5.338d+01 HRS  0.14d+0  0.07d+0  2.07d+0  1.00d+0  1.00d+0
+ LU176 LU*76   71  176   3.800d+10 YRS   3.680d+00 HRS  0.30d+0  0.33d+0  1.00d+0  1.00d+0  1.00d+0
+ TA180 TAg80   73  180   1.200d+15 YRS   8.150d+00 HRS  0.15d+0  9.57d-1  1.00d+0  1.00d+0  1.00d+0
+

@@ -1,0 +1,30 @@
+# Copy this file to Make.local and edit to suit your local
+# configuration
+
+ARCH = INTEL
+
+# make sure PHYSICS and SOLVER are absolute path names, like this:
+
+PPN = /afs/crc.nd.edu/user/m/mpignata/ppn_package_26jan_11
+
+PHYSICS = $(PPN)/physics/phys08
+SOLVER = $(PPN)/solver/NFR
+
+# the MKL libraries should be selected via the environment setting
+#  scripts that are loaded from the .bashrc (see the latex
+#  documentation for the solver)
+
+# mkl_solver_lp64 is needed for the sparse solver
+# mkl_lapack is needed for the general lapack solver (mat_solv_option)
+#
+# here I specify LAPACK paths, depending if I am using MKL or ACML.
+# if I want to use MKL uncomment here below:
+#
+#LD_PATH_LAPACK=/afs/crc.nd.edu/x86_64_linux/scilib/mkl/10.1.0.015/lib/em64t
+#LAPACK_LIBS = -lmkl_lapack -lmkl_solver_lp64 -lmkl_intel_lp64 -lmkl_intel_thread -lmkl_core -liomp5 -lpthread
+#
+# if I want to use ACML uncomment here below:
+LD_PATH_LAPACK=/afs/crc.nd.edu/user/m/mpignata/opt/acml4.4.0/ifort64/lib
+LAPACK_LIBS =  -lacml -lacml_mv
+#
+#

@@ -1,0 +1,6 @@
+# submit dependent job
+set -- `qstat -u fherwig|tail -n 1`
+name=$1
+
+qsub -W depend=afterany:${name:0:7}  jobscript.saguaro
+

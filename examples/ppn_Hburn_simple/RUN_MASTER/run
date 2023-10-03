@@ -1,0 +1,3 @@
+# run script
+../CODE/ppn.exe > OUT &
+tail -f OUT

@@ -1,0 +1,10 @@
+&ppn_frame
+
+        nsource = 1
+	trajectory_fn = 'trajectory.input'
+        iabuini = 11
+        ini_filename = '../../frames/mppnp/USEEPP/iniab1.4E-02As09.ppn'
+        iolevel = 1
+	print_cycles = 1
+
+/
